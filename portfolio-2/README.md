@@ -1,75 +1,59 @@
-# React + TypeScript + Vite
+# Portfolio 2025
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Un portfolio moderne, minimaliste et performant, conçu pour mettre en avant mes projets et compétences avec une esthétique soignée basée sur le thème **"Marrow"** (tons bruns et chaleureux).
 
-Currently, two official plugins are available:
+## 🚀 Technologies utilisées
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React 18** - Bibliothèque UI
+- **TypeScript** - Typage statique pour un code robuste
+- **Vite** - Build tool ultra-rapide
+- **Tailwind CSS** - Framework CSS utilitaire pour le design
+- **Framer Motion** - Bibliothèque d'animations puissante
+- **Lucide React** - Set d'icônes modernes
 
-## React Compiler
+## ✨ Fonctionnalités clés
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+- **Thème Marrow** : Une palette de couleurs personnalisée offrant une expérience visuelle unique et apaisante.
+- **Arrière-plan de particules** : Animation fluide et interactive de particules pour une immersion immédiate.
+- **Navigation fluide** : Transitions de pages animées avec Framer Motion.
+- **Design Responsive** : Optimisé pour tous les écrans (desktop, tablette, mobile).
+- **Sections dédiées** :
+    - **Accueil (Hero)** : Présentation percutante.
+    - **À propos** : Mon parcours et ma vision.
+    - **Projets** : Galerie de mes réalisations.
+    - **Compétences** : Mes outils et expertises techniques.
+    - **Contact** : Formulaire et liens vers les réseaux sociaux.
 
-Note: This will impact Vite dev & build performances.
+## 🛠️ Installation et Utilisation
 
-## Expanding the ESLint configuration
+### Prérequis
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Assurez-vous d'avoir [Node.js](https://nodejs.org/) installé sur votre machine.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Installation
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+1. Clonez le dépôt :
+   ```bash
+   git clone [url-du-depot]
+   ```
+2. Installez les dépendances :
+   ```bash
+   npm install
+   ```
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Lancement en mode développement
+
+```bash
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Build pour la production
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run build
 ```
+
+## 📄 Licence
+
+Projet personnel par [Votre Nom]. Tous droits réservés.
+
