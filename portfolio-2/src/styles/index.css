@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 0 0% 100%;
+  --foreground: 20 33% 18%;
+
+  /* Brown Palette - HSL based for easier shading */
+  --primary: 25 45% 35%;
+  /* Base Marrow */
+  --primary-foreground: 0 0% 100%;
+  /* White */
+  --primary-light: 28 40% 60%;
+  --primary-dark: 20 35% 20%;
+  --accent: 35 60% 50%;
+  /* Golden Ochre accent */
+
+  --secondary: 30 20% 94%;
+  --muted: 30 9% 43%;
+  --border: 30 11% 84%;
+}
+
+[data-theme="dark"] {
+  --background: 20 15% 7%;
+  /* Almost black brown */
+  --foreground: 30 20% 94%;
+
+  --primary: 30 40% 60%;
+  /* Lighter for contrast */
+  --primary-foreground: 20 15% 7%;
+  /* Dark brown for contrast */
+  --primary-light: 35 45% 75%;
+  --primary-dark: 20 50% 40%;
+  --accent: 40 70% 65%;
+
+  --secondary: 35 25% 15%;
+  --muted: 30 8% 55%;
+  --border: 45 35% 25%;
+}
+
+body {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  transition: background-color 0.3s, color 0.3s;
+}
+
+::selection {
+  background-color: hsl(var(--primary) / 0.2);
+  color: hsl(var(--primary-dark));
+}
+
+::-moz-selection {
+  background-color: hsl(var(--primary) / 0.2);
+  color: hsl(var(--primary-dark));
+}
