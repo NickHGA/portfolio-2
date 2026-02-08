@@ -5,6 +5,7 @@
  */
 import { motion } from 'framer-motion';
 import { useLanguage } from '../provider/LanguageContext';
+import { DotWave } from './DotWave';
 
 interface HeroProps {
     onNavigate: (view: string) => void;
@@ -19,6 +20,7 @@ export function Hero({ onNavigate }: HeroProps) {
             id="home"
             className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background"
         >
+            <DotWave />
             {/* Grille d'arrière-plan très subtile */}
             <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--border)_1px,transparent_1px),linear-gradient(to_bottom,var(--border)_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-20" />
 
@@ -82,13 +84,13 @@ export function Hero({ onNavigate }: HeroProps) {
                     className="flex flex-col sm:flex-row items-center justify-center gap-6"
                 >
                     <button
-                        onClick={() => onNavigate('about')}
+                        onClick={() => onNavigate('skills')}
                         className="px-8 py-3 bg-gradient-to-r from-primary-dark to-primary text-white font-medium rounded-md hover:shadow-xl hover:shadow-primary/20 transition-all duration-300"
                     >
                         {t('hero.cta1')}
                     </button>
                     <button
-                        onClick={() => onNavigate('projects')}
+                        onClick={() => onNavigate('contact')}
                         className="px-8 py-3 bg-transparent border border-foreground/20 text-foreground font-medium rounded-md hover:bg-foreground/5 transition-all duration-300"
                     >
                         {t('hero.cta2')}

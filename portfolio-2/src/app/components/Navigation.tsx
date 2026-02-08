@@ -5,7 +5,7 @@
  */
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { MoreHorizontal, X, Sun, Moon, Languages } from 'lucide-react';
+import { MoreHorizontal, X, Sun, Moon } from 'lucide-react';
 import { useTheme } from '../../components/providers/ThemeProvider';
 import { useLanguage } from '../provider/LanguageContext';
 

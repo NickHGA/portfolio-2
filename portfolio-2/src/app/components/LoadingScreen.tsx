@@ -3,7 +3,7 @@
  * Affiche une barre de progression et un message de bienvenue
  * avant de dévoiler le contenu du portfolio.
  */
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Sparkles } from 'lucide-react';
 import { useState, useEffect } from 'react';
 

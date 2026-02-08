@@ -264,9 +264,22 @@ export function Contact() {
                     <p className="text-muted-foreground mb-4">
                         {t('contact.footer1')}
                     </p>
-                    <p className="text-sm text-muted-foreground/60">
-                        {t('contact.footer2')}
-                    </p>
+                    <div className="flex flex-col items-center gap-2">
+                        <p className="text-sm text-muted-foreground/60">
+                            {t('contact.footer2')}
+                        </p>
+                        <p className="text-xs text-muted-foreground/40 font-medium">
+                            {t('contact.footer.credit')}{' '}
+                            <a 
+                                href="https://portfolio-xi-eight-47.vercel.app/" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                className="text-primary/60 hover:text-primary transition-colors underline underline-offset-4"
+                            >
+                                NickHGA
+                            </a>
+                        </p>
+                    </div>
                 </motion.div>
             </div>
         </section>

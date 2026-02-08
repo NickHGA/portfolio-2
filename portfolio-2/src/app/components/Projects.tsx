@@ -1,80 +1,99 @@
-/**
- * Projects.tsx - Galerie des projets.
- * Affiche une liste de projets sous forme de cartes interactives.
- * Chaque projet inclut une catégorie, une description, les défis/solutions et les technos.
- */
-import { motion, useInView } from 'framer-motion';
-import { useRef } from 'react';
-import { ExternalLink, Github, Database, Globe, Gamepad2, LayoutDashboard } from 'lucide-react';
+import { useState, useRef } from 'react';
+import { motion, AnimatePresence, useInView } from 'framer-motion';
+import {
+    Database,
+    Globe,
+    Gamepad2,
+    LayoutDashboard,
+    Calendar,
+    Briefcase,
+    X,
+    ArrowRight,
+    CheckCircle2
+} from 'lucide-react';
 import { useLanguage } from '../provider/LanguageContext';
+
+interface Project {
+    title: string;
+    roleKey: string;
+    durationKey: string;
+    category: string;
+    activitiesKey: string;
+    missionsKey: string;
+    responsibilitiesKey: string;
+    tech: string[];
+    icon: any;
+}
 
 export function Projects() {
     const { t } = useLanguage();
     const ref = useRef(null);
-    // isInView : Détecte l'entrée en vue pour animer la grille
     const isInView = useInView(ref, { once: true, margin: "-100px" });
+    const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
-    // projects : Tableau d'objets contenant les données de chaque projet (Mission)
-    const projects = [
+    const projects: Project[] = [
         {
             title: 'Audit Industriel',
+            roleKey: 'projects.schoolhub.role',
+            durationKey: 'projects.schoolhub.duration',
             category: t('projects.schoolhub.cat'),
-            description: t('projects.schoolhub.desc'),
-            problem: t('projects.schoolhub.prob'),
-            solution: t('projects.schoolhub.sol'),
+            activitiesKey: 'projects.schoolhub.activities',
+            missionsKey: 'projects.schoolhub.missions',
+            responsibilitiesKey: 'projects.schoolhub.responsibilities',
             tech: ['Audit Légal', 'CAC', 'Revue de cycles', 'Excel Avancé'],
-            icon: LayoutDashboard, // Ou FileText si dispo
-            gradient: 'from-primary-dark to-primary',
+            icon: LayoutDashboard,
         },
         {
             title: 'Restructuration',
+            roleKey: 'projects.medipass.role',
+            durationKey: 'projects.medipass.duration',
             category: t('projects.medipass.cat'),
-            description: t('projects.medipass.desc'),
-            problem: t('projects.medipass.prob'),
-            solution: t('projects.medipass.sol'),
+            activitiesKey: 'projects.medipass.activities',
+            missionsKey: 'projects.medipass.missions',
+            responsibilitiesKey: 'projects.medipass.responsibilities',
             tech: ['Droit Fiscal', 'Intégration Fiscale', 'Holding', 'Juridique'],
-            icon: Database, // Ou Scale
-            gradient: 'from-primary-dark to-primary',
+            icon: Database,
         },
         {
             title: 'Audit Social',
+            roleKey: 'projects.sondagepro.role',
+            durationKey: 'projects.sondagepro.duration',
             category: t('projects.sondagepro.cat'),
-            description: t('projects.sondagepro.desc'),
-            problem: t('projects.sondagepro.prob'),
-            solution: t('projects.sondagepro.sol'),
+            activitiesKey: 'projects.sondagepro.activities',
+            missionsKey: 'projects.sondagepro.missions',
+            responsibilitiesKey: 'projects.sondagepro.responsibilities',
             tech: ['Droit Social', 'Paie', 'URSSAF', 'Management'],
-            icon: Globe, // Ou Users
-            gradient: 'from-primary-dark to-primary',
+            icon: Globe,
         },
         {
             title: 'Start-up Immo',
+            roleKey: 'projects.comotorage.role',
+            durationKey: 'projects.comotorage.duration',
             category: t('projects.comotorage.cat'),
-            description: t('projects.comotorage.desc'),
-            problem: t('projects.comotorage.prob'),
-            solution: t('projects.comotorage.sol'),
+            activitiesKey: 'projects.comotorage.activities',
+            missionsKey: 'projects.comotorage.missions',
+            responsibilitiesKey: 'projects.comotorage.responsibilities',
             tech: ['Business Plan', 'Financement', 'Création', 'SAS'],
-            icon: Gamepad2, // Ou Rocket
-            gradient: 'from-primary-dark to-primary',
+            icon: Gamepad2,
         },
         {
             title: 'Reporting KPI',
+            roleKey: 'projects.objectif2026.role',
+            durationKey: 'projects.objectif2026.duration',
             category: t('projects.objectif2026.cat'),
-            description: t('projects.objectif2026.desc'),
-            problem: t('projects.objectif2026.prob'),
-            solution: t('projects.objectif2026.sol'),
+            activitiesKey: 'projects.objectif2026.activities',
+            missionsKey: 'projects.objectif2026.missions',
+            responsibilitiesKey: 'projects.objectif2026.responsibilities',
             tech: ['Contrôle de Gestion', 'PowerBI', 'KPI', 'Prévisionnel'],
             icon: LayoutDashboard,
-            gradient: 'from-primary-dark to-primary',
         },
     ];
 
     return (
         <section id="projects" className="relative py-32 bg-background overflow-hidden">
-            {/* Background elements */}
-            <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--border)_1px,transparent_1px),linear-gradient(to_bottom,var(--border)_1px,transparent_1px)] bg-[size:4rem_4rem]" />
+            <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--border)_1px,transparent_1px),linear-gradient(to_bottom,var(--border)_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-20" />
 
             <div className="relative max-w-7xl mx-auto px-6" ref={ref}>
-                {/* Section header */}
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -84,126 +103,174 @@ export function Projects() {
                     <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
                         {t('projects.title')}
                     </h2>
-                    <div className="w-20 h-1 bg-gradient-to-r from-primary-dark via-primary to-accent mx-auto mb-6" />
+                    <div className="w-20 h-1 bg-primary mx-auto mb-6" />
                     <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
                         {t('projects.subtitle')}
                     </p>
                 </motion.div>
 
-                {/* Liste des projets (full-width) */}
-                <div className="flex flex-col gap-8">
+                <div className="flex flex-col gap-10">
                     {projects.map((project, index) => (
                         <motion.div
                             key={index}
-                            initial={{ opacity: 0, y: 30 }}
-                            animate={isInView ? { opacity: 1, y: 0 } : {}}
-                            // Animation décalée (index * 0.1) pour un effet d'apparition fluide l'un après l'autre
+                            initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
+                            animate={isInView ? { opacity: 1, x: 0 } : {}}
                             transition={{ duration: 0.6, delay: 0.1 * index }}
                             className="group relative"
-                            whileHover={{ y: -5, transition: { duration: 0.2 } }}
                         >
-                            <div
-                                className="relative p-8 rounded-2xl bg-gradient-to-br from-foreground/5 to-foreground/[0.02] border border-foreground/10 backdrop-blur-sm hover:border-primary/20 transition-all duration-500 overflow-hidden cursor-pointer"
-                                onClick={() => {
-                                    console.log(`Navigating to ${project.title}`);
-                                }}
-                            >
-                                {/* Overlay coloré au survol (Gradient opacity) */}
-                                <div className={`absolute inset-0 bg-gradient-to-br from-primary-dark to-accent opacity-0 group-hover:opacity-5 transition-opacity duration-500`} />
-
-                                {/* Contenu de la carte */}
-                                <div className="relative z-10">
-                                    {/* Icon & Category */}
-                                    <div className="flex items-center justify-between mb-6">
-                                        <motion.div
-                                            className={`p-3 rounded-xl bg-primary/10`}
-                                            whileHover={{ rotate: 360, scale: 1.1 }}
-                                            transition={{ duration: 0.5 }}
-                                        >
-                                            <project.icon className={`w-6 h-6 text-primary-foreground`} />
-                                        </motion.div>
-                                        <span className="text-xs text-muted-foreground uppercase tracking-wider">{project.category}</span>
-                                    </div>
-
-                                    {/* Title & Description */}
-                                    <h3 className="text-2xl font-bold text-foreground mb-3">{project.title}</h3>
-                                    <p className="text-muted-foreground mb-6">{project.description}</p>
-
-                                    {/* Problem & Solution */}
-                                    <div className="space-y-3 mb-6">
-                                        <div>
-                                            <span className="text-xs text-primary font-semibold uppercase tracking-tighter">{t('projects.problem')}</span>
-                                            <p className="text-sm text-muted-foreground mt-1 leading-relaxed">{project.problem}</p>
+                            <div className="p-8 md:p-10 rounded-[2.5rem] bg-card border border-foreground/5 shadow-sm hover:shadow-2xl hover:border-primary/20 transition-all duration-500 overflow-hidden">
+                                <div className="flex flex-col md:flex-row gap-8">
+                                    {/* Contenu principal */}
+                                    <div className="flex-1 space-y-6">
+                                        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                                            <div className="space-y-1">
+                                                <span className="text-xs font-bold text-primary uppercase tracking-widest">{project.category}</span>
+                                                <h3 className="text-3xl font-black text-foreground">{project.title}</h3>
+                                                <div className="flex items-center gap-2 text-muted-foreground">
+                                                    <Briefcase className="w-4 h-4" />
+                                                    <span className="font-semibold">{t(project.roleKey)}</span>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div>
-                                            <span className="text-xs text-accent font-semibold uppercase tracking-tighter">{t('projects.solution')}</span>
-                                            <p className="text-sm text-muted-foreground mt-1 leading-relaxed">{project.solution}</p>
+
+                                        <div className="grid sm:grid-cols-3 gap-6 pt-4">
+                                            <div className="space-y-2">
+                                                <p className="text-xs font-bold text-muted-foreground uppercase">{t('projects.activities')}</p>
+                                                <p className="text-sm text-foreground/80 leading-relaxed font-medium line-clamp-2">{t(project.activitiesKey)}</p>
+                                            </div>
+                                            <div className="space-y-2">
+                                                <p className="text-xs font-bold text-muted-foreground uppercase">{t('projects.missions')}</p>
+                                                <p className="text-sm text-foreground/80 leading-relaxed font-medium line-clamp-2">{t(project.missionsKey)}</p>
+                                            </div>
+                                            <div className="space-y-2">
+                                                <p className="text-xs font-bold text-muted-foreground uppercase">{t('projects.responsibilities')}</p>
+                                                <p className="text-sm text-foreground/80 leading-relaxed font-medium line-clamp-2">{t(project.responsibilitiesKey)}</p>
+                                            </div>
                                         </div>
-                                    </div>
 
-                                    {/* Tech stack */}
-                                    <div className="flex flex-wrap gap-2 mb-6">
-                                        {project.tech.map((tech, techIndex) => (
-                                            <motion.span
-                                                key={techIndex}
-                                                className="px-3 py-1 text-xs rounded-full bg-foreground/5 border border-foreground/10 text-muted-foreground"
-                                                whileHover={{ scale: 1.1, backgroundColor: "hsl(var(--accent) / 0.1)", color: "hsl(var(--accent))" }}
-                                            >
-                                                {tech}
-                                            </motion.span>
-                                        ))}
-                                    </div>
+                                        <div className="flex flex-wrap gap-2 pt-2">
+                                            {project.tech.map((tech, i) => (
+                                                <span key={i} className="px-3 py-1 text-[10px] font-bold rounded-full bg-primary/5 border border-primary/10 text-primary/80 uppercase tracking-tighter">
+                                                    {tech}
+                                                </span>
+                                            ))}
+                                        </div>
 
-                                    {/* Links */}
-                                    <div className="flex items-center gap-4">
-                                        <motion.button
-                                            className="flex items-center gap-2 text-sm text-primary font-bold hover:text-primary/80 transition-colors pointer-events-auto"
-                                            whileHover={{ x: 3 }}
-                                            whileTap={{ scale: 0.95 }}
-                                            onClick={(e) => {
-                                                e.stopPropagation();
-                                            }}
-                                        >
-                                            <ExternalLink className="w-4 h-4" />
-                                            {t('projects.details')}
-                                        </motion.button>
-                                        <motion.button
-                                            className="flex items-center gap-2 text-sm text-muted-foreground font-bold hover:text-foreground transition-colors pointer-events-auto"
-                                            whileHover={{ x: 3 }}
-                                            whileTap={{ scale: 0.95 }}
-                                            onClick={(e) => {
-                                                e.stopPropagation();
-                                            }}
-                                        >
-                                            <Github className="w-4 h-4" />
-                                            {t('projects.code')}
-                                        </motion.button>
+                                        <div className="flex items-center justify-between pt-8 border-t border-foreground/5 mt-4">
+                                            <div className="flex items-center gap-4">
+                                                <div className="p-3 rounded-2xl bg-primary/10 border border-primary/20">
+                                                    <project.icon className="w-6 h-6 text-primary" />
+                                                </div>
+                                            </div>
+
+                                            <div className="flex items-center gap-6">
+                                                <div className="flex items-center gap-2 text-muted-foreground text-sm font-bold">
+                                                    <Calendar className="w-4 h-4" />
+                                                    {t(project.durationKey)}
+                                                </div>
+                                                <motion.button
+                                                    whileHover={{ x: 5 }}
+                                                    whileTap={{ scale: 0.95 }}
+                                                    onClick={() => setSelectedProject(project)}
+                                                    className="flex items-center gap-2 text-sm font-bold text-primary group/btn"
+                                                >
+                                                    {t('projects.details')}
+                                                    <ArrowRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-1" />
+                                                </motion.button>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </motion.div>
                     ))}
                 </div>
-
-                {/* CTA */}
-                <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={isInView ? { opacity: 1, y: 0 } : {}}
-                    transition={{ duration: 0.6, delay: 0.5 }}
-                    className="text-center mt-16"
-                >
-                    <p className="text-muted-foreground mb-4">{t('projects.cta')}</p>
-                    <a
-                        href="https://github.com/NickHGA"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="px-6 py-3 bg-foreground/5 border border-foreground/10 text-foreground rounded-lg hover:bg-foreground/10 backdrop-blur-sm transition-all duration-300 inline-flex items-center gap-2"
-                    >
-                        <Github className="w-5 h-5" />
-                        {t('projects.ctaBtn')}
-                    </a>
-                </motion.div>
             </div>
+
+            {/* Modal de détail de la mission */}
+            <AnimatePresence>
+                {selectedProject && (
+                    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-6 overflow-hidden">
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            onClick={() => setSelectedProject(null)}
+                            className="absolute inset-0 bg-background/60 backdrop-blur-xl"
+                        />
+
+                        <motion.div
+                            initial={{ scale: 0.9, opacity: 0, y: 30 }}
+                            animate={{ scale: 1, opacity: 1, y: 0 }}
+                            exit={{ scale: 0.9, opacity: 0, y: 30 }}
+                            className="relative w-full max-w-3xl bg-card border border-foreground/10 rounded-[2.5rem] p-8 md:p-12 shadow-2xl overflow-y-auto max-h-[90vh] backdrop-blur-2xl"
+                        >
+                            <button
+                                onClick={() => setSelectedProject(null)}
+                                className="absolute top-8 right-8 p-3 rounded-2xl bg-foreground/5 hover:bg-foreground/10 transition-all hover:scale-110 active:scale-95 group/close"
+                            >
+                                <X className="w-6 h-6 text-foreground/50 group-hover/close:text-foreground" />
+                            </button>
+
+                            <div className="space-y-12">
+                                <div className="space-y-4">
+                                    <span className="px-4 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-bold tracking-widest uppercase">
+                                        {selectedProject.category}
+                                    </span>
+                                    <h3 className="text-4xl md:text-5xl font-black text-foreground leading-tight">
+                                        {selectedProject.title}
+                                    </h3>
+                                    <div className="flex flex-wrap items-center gap-6 pt-2">
+                                        <div className="flex items-center gap-2 text-muted-foreground font-bold">
+                                            <Briefcase className="w-5 h-5 text-primary" />
+                                            {t(selectedProject.roleKey)}
+                                        </div>
+                                        <div className="flex items-center gap-2 text-muted-foreground font-bold">
+                                            <Calendar className="w-5 h-5 text-primary" />
+                                            {t(selectedProject.durationKey)}
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="grid gap-10">
+                                    {[
+                                        { label: 'projects.activities', key: selectedProject.activitiesKey },
+                                        { label: 'projects.missions', key: selectedProject.missionsKey },
+                                        { label: 'projects.responsibilities', key: selectedProject.responsibilitiesKey }
+                                    ].map((item, i) => (
+                                        <motion.div
+                                            key={i}
+                                            initial={{ opacity: 0, x: -20 }}
+                                            animate={{ opacity: 1, x: 0 }}
+                                            transition={{ delay: 0.1 * i + 0.3 }}
+                                            className="space-y-4"
+                                        >
+                                            <h4 className="inline-flex items-center gap-2 text-lg font-black text-foreground border-b-2 border-primary/20 pb-1">
+                                                <CheckCircle2 className="w-5 h-5 text-primary" />
+                                                {t(item.label)}
+                                            </h4>
+                                            <p className="text-lg text-muted-foreground leading-relaxed font-medium pl-7">
+                                                {t(item.key)}
+                                            </p>
+                                        </motion.div>
+                                    ))}
+                                </div>
+
+                                <div className="pt-8 border-t border-foreground/5">
+                                    <p className="text-xs font-bold text-muted-foreground uppercase tracking-widest mb-4">Expertise mobilisée</p>
+                                    <div className="flex flex-wrap gap-2">
+                                        {selectedProject.tech.map((tech, i) => (
+                                            <span key={i} className="px-4 py-2 rounded-xl bg-foreground/5 border border-foreground/10 text-foreground font-bold text-sm">
+                                                {tech}
+                                            </span>
+                                        ))}
+                                    </div>
+                                </div>
+                            </div>
+                        </motion.div>
+                    </div>
+                )}
+            </AnimatePresence>
         </section>
     );
 }

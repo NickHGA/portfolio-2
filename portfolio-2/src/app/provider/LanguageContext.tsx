@@ -23,20 +23,22 @@ const translations = {
         'hero.title1': 'Expertise et Conseil',
         'hero.title2': "pour votre réussite",
         'hero.description': "Accompagnement stratégique, audit financier et optimisation fiscale pour les entreprises et les particuliers. Une vision claire de vos chiffres pour des décisions éclairées.",
-        'hero.cta1': 'Mon expertise',
-        'hero.cta2': 'Mes services',
+        'hero.cta1': 'Mes services',
+        'hero.cta2': 'Contact',
 
         // Menu
         'menu.home': 'Accueil',
         'menu.home.sub': "Retour à l'écran principal",
         'menu.about': 'À propos',
-        'menu.about.sub': 'Mon parcours et mes valeurs',
-        'menu.projects': 'Missions',
-        'menu.projects.sub': 'Exemples d\'interventions',
+        'menu.about.sub': 'mon parcours et mon histoire',
+        'menu.projects': 'Expériences professionnelles',
+        'menu.projects.sub': 'mes activités, missions et responsabilités',
         'menu.skills': 'Compétences',
         'menu.skills.sub': 'Domaines d\'expertise',
         'menu.contact': 'Contact',
         'menu.contact.sub': 'Prendre rendez-vous',
+        'menu.cv': 'Télécharger CV',
+        'menu.cv.sub': 'Format PDF',
 
         // About
         'about.title': 'À propos',
@@ -69,55 +71,90 @@ const translations = {
         'about.stat4': 'Confidentialité',
 
         // Projects (Missions)
-        'projects.title': 'Missions de Référence',
-        'projects.subtitle': 'Exemples d\'interventions menées pour nos clients',
-        'projects.problem': 'Enjeu',
-        'projects.solution': 'Intervention',
-        'projects.details': 'Détails',
-        'projects.code': 'Référence',
+        'projects.title': 'Expériences professionnelles',
+        'projects.subtitle': 'Exemples d\'interventions réalisées pour nos clients',
+        'projects.activities': 'Activités',
+        'projects.missions': 'Missions',
+        'projects.responsibilities': 'Responsabilités',
+        'projects.duration': 'Durée',
+        'projects.role': 'Poste occupé',
+        'projects.details': 'Détails de la mission',
+        'projects.modal.title': 'Détails de l\'intervention',
+        'projects.modal.subtitle': 'Vue approfondie de la mission et des résultats',
+        'projects.code': 'Réference',
         'projects.cta': 'Contactez-moi pour une étude personnalisée',
         'projects.ctaBtn': 'Demander un devis',
 
         // Mission 1
         'projects.schoolhub.cat': 'Audit Légal',
-        'projects.schoolhub.desc': 'Audit des comptes annuels d\'une PME industrielle (CA > 10M€). Certification des états financiers.',
-        'projects.schoolhub.prob': 'Fiabilisation nécessaire des comptes pour une levée de fonds.',
-        'projects.schoolhub.sol': 'Revue complète des cycles, identification des risques et certification sans réserve.',
+        'projects.schoolhub.role': 'Auditeur Senior',
+        'projects.schoolhub.duration': '2023 – Présent',
+        'projects.schoolhub.activities': 'Audit légal des comptes annuels d\'une PME industrielle (CA > 10M€).',
+        'projects.schoolhub.missions': 'Certification de l\'information financière et revue critique des cycles d\'exploitation.',
+        'projects.schoolhub.responsibilities': 'Identification des risques d\'audit, validation des écritures de clôture et rédaction du rapport général.',
 
         // Mission 2
         'projects.medipass.cat': 'Conseil Fiscal',
-        'projects.medipass.desc': 'Restructuration fiscale d\'un groupe de sociétés (Holding). Optimisation de l\'intégration fiscale.',
-        'projects.medipass.prob': 'Charge fiscale inadaptée à la structure du groupe.',
-        'projects.medipass.sol': 'Mise en place d\'une holding animatrice et régime d\'intégration fiscale.',
+        'projects.medipass.role': 'Consultant Fiscalité',
+        'projects.medipass.duration': '2022 – 2023',
+        'projects.medipass.activities': 'Restructuration juridique et fiscale d\'un groupe de sociétés.',
+        'projects.medipass.missions': 'Optimisation de la structure détenue via la mise en place d\'une holding animatrice.',
+        'projects.medipass.responsibilities': 'Audit fiscal préalable, mise en place du régime d\'intégration fiscale et suivi des conventions de management fees.',
 
         // Mission 3
         'projects.sondagepro.cat': 'Gestion Sociale',
-        'projects.sondagepro.desc': 'Audit de conformité sociale et mise en place d\'un accord d\'intéressement.',
-        'projects.sondagepro.prob': 'Risques de redressement URSSAF et besoin de motivation salariale.',
-        'projects.sondagepro.sol': 'Correction des anomalies et rédaction d\'un accord d\'intéressement sur mesure.',
+        'projects.sondagepro.role': 'Consultant RH & Social',
+        'projects.sondagepro.duration': '2021 – 2022',
+        'projects.sondagepro.activities': 'Audit de conformité sociale et optimisation des charges patronales.',
+        'projects.sondagepro.missions': 'Sécurisation du climat social et mise en place de dispositifs d\'épargne salariale.',
+        'projects.sondagepro.responsibilities': 'Revue des contrats de travail, calcul des provisions sociales et rédaction d\'un accord d\'intéressement sur mesure.',
 
         // Mission 4
-        'projects.comotorage.cat': 'Création d\'Entreprise',
-        'projects.comotorage.desc': 'Accompagnement à la création d\'une start-up innovante : Business Plan, statuts, financement.',
-        'projects.comotorage.prob': 'Complexité des choix juridiques et fiscaux au démarrage.',
-        'projects.comotorage.sol': 'Rédaction du BP, choix SAS IS, et obtention d\'un prêt bancaire.',
+        'projects.comotorage.cat': 'Création d\'entreprise',
+        'projects.comotorage.role': 'Conseiller en Création',
+        'projects.comotorage.duration': '2020 – 2021',
+        'projects.comotorage.activities': 'Accompagnement à la création d\'une start-up innovante dans l\'immobilier.',
+        'projects.comotorage.missions': 'Établissement du Business Plan prévisionnel et recherche de financements bancaires.',
+        'projects.comotorage.responsibilities': 'Conseil sur le choix de la forme juridique (SAS), rédaction des statuts et montage du dossier de financement.',
 
         // Mission 5
         'projects.objectif2026.cat': 'Pilotage & Reporting',
-        'projects.objectif2026.desc': 'Mise en place de tableaux de bord de gestion (KPIs) pour le suivi mensuel de l\'activité.',
-        'projects.objectif2026.prob': 'Manque de visibilité sur la rentabilité en temps réel.',
-        'projects.objectif2026.sol': 'Dashboard automatisé sous PowerBI connecté à la comptabilité.',
+        'projects.objectif2026.role': 'Contrôleur de Gestion',
+        'projects.objectif2026.duration': '2019 – 2020',
+        'projects.objectif2026.activities': 'Mise en place d\'outils de pilotage et de reporting mensuel.',
+        'projects.objectif2026.missions': 'Digitalisation du suivi de la performance via des dashboards automatisés.',
+        'projects.objectif2026.responsibilities': 'Définition des indicateurs clés (KPI), connexion des flux comptables à Power BI et présentation des résultats à la direction.',
 
         // Skills
         'skills.title': 'Domaines de Compétence',
         'skills.subtitle': 'Une expertise pluridisciplinaire au service de votre entreprise',
         'skills.learning': 'Veille réglementaire constante',
-        'skills.languages': 'Comptabilité',
-        'skills.frameworks': 'Fiscalité',
-        'skills.databases': 'Juridique',
-        'skills.ai': 'Outils & Systèmes',
-        'skills.tools': 'Audit',
-        'skills.other': 'Soft Skills',
+        'skills.technical.title': 'Expertise Technique',
+        'skills.software.title': 'Maîtrise Logicielle',
+
+        'skills.accounting.title': 'Expertise Comptable',
+        'skills.accounting.desc': 'Tenue et révision comptable, établissement des bilans et liasses fiscales. Reporting mensuel pour un pilotage précis.',
+
+        'skills.tax.title': 'Fiscalité des Entreprises',
+        'skills.tax.desc': 'Calcul des taxes, déclarations fiscales et optimisation de votre charge fiscale. Assistance en cas de contrôle.',
+
+        'skills.legal.title': 'Juridique & Sociétés',
+        'skills.legal.desc': 'Secrétariat juridique annuel, rédaction de statuts et modifications de structure. Droit des sociétés.',
+
+        'skills.audit.title': 'Audit & Contrôle',
+        'skills.audit.desc': 'Audit légal et contractuel. Certification des comptes et évaluation des procédures de contrôle interne.',
+
+        'skills.soft.title': 'Management & Conseil',
+        'skills.soft.desc': 'Gestion d\'équipe, relation client et anglais des affaires. Force de proposition et esprit d\'analyse stratégique.',
+
+        'skills.excel.title': 'Microsoft Excel',
+        'skills.excel.desc': 'Maîtrise experte des fonctions avancées, VBA, PowerQuery et PowerPivot pour l\'automatisation des flux de données.',
+
+        'skills.bi.title': 'Power BI & Reporting',
+        'skills.bi.desc': 'Conception de dashboards interactifs et visuels pour le pilotage de la performance et l\'aide à la décision.',
+
+        'skills.logiciel.title': 'Logiciels Comptables',
+        'skills.logiciel.desc': 'Utilisation quotidienne des solutions Sage et Cegid pour la production comptable et les états financiers.',
 
         // Contact
         'contact.title': 'Prendre Contact',
@@ -130,8 +167,10 @@ const translations = {
         'contact.form.message': 'Objet de la demande',
         'contact.form.messagePlaceholder': 'Décrivez votre besoin...',
         'contact.form.submit': 'Envoyer la demande',
+
         'contact.footer1': 'Cabinet HOUAGA Mat-Colin — Expertise Comptable & Audit',
         'contact.footer2': '© 2025 HOUAGA Mat-Colin • Tous droits réservés',
+        'contact.footer.credit': 'Réalisé par',
     },
     en: {
         // Navigation
@@ -142,20 +181,22 @@ const translations = {
         'hero.title1': 'Expertise and Advice',
         'hero.title2': "for your success",
         'hero.description': "Strategic support, financial audit, and tax optimization for businesses and individuals. A clear vision of your numbers for informed decisions.",
-        'hero.cta1': 'My expertise',
-        'hero.cta2': 'My services',
+        'hero.cta1': 'My services',
+        'hero.cta2': 'Contact',
 
         // Menu
         'menu.home': 'Home',
         'menu.home.sub': 'Back to main screen',
         'menu.about': 'About',
-        'menu.about.sub': 'My journey and values',
-        'menu.projects': 'Missions',
-        'menu.projects.sub': 'Examples of interventions',
+        'menu.about.sub': 'my journey and my story',
+        'menu.projects': 'Professional Experience',
+        'menu.projects.sub': 'my activities, missions and responsibilities',
         'menu.skills': 'Expertise',
         'menu.skills.sub': 'Areas of expertise',
         'menu.contact': 'Contact',
         'menu.contact.sub': 'Book an appointment',
+        'menu.cv': 'Download Resume',
+        'menu.cv.sub': 'PDF Format',
 
         // About
         'about.title': 'About',
@@ -188,55 +229,90 @@ const translations = {
         'about.stat4': 'Confidentiality',
 
         // Projects (Missions)
-        'projects.title': 'Reference Missions',
+        'projects.title': 'Professional Experience',
         'projects.subtitle': 'Examples of interventions carried out for our clients',
-        'projects.problem': 'Challenge',
-        'projects.solution': 'Intervention',
-        'projects.details': 'Details',
+        'projects.activities': 'Activities',
+        'projects.missions': 'Missions',
+        'projects.responsibilities': 'Responsibilities',
+        'projects.duration': 'Duration',
+        'projects.role': 'Position held',
+        'projects.details': 'Mission details',
+        'projects.modal.title': 'Intervention Details',
+        'projects.modal.subtitle': 'In-depth view of the mission and results',
         'projects.code': 'Reference',
         'projects.cta': 'Contact me for a personalized study',
         'projects.ctaBtn': 'Request a quote',
 
         // Mission 1
         'projects.schoolhub.cat': 'Statutory Audit',
-        'projects.schoolhub.desc': 'Audit of annual accounts for an industrial SME (Turnover > €10M). Certification of financial statements.',
-        'projects.schoolhub.prob': 'Reliability of accounts needed for fundraising.',
-        'projects.schoolhub.sol': 'Complete review of cycles, risk identification, and unqualified certification.',
+        'projects.schoolhub.role': 'Senior Auditor',
+        'projects.schoolhub.duration': '2023 – Present',
+        'projects.schoolhub.activities': 'Statutory audit of annual accounts for an industrial SME (Turnover > €10M).',
+        'projects.schoolhub.missions': 'Certification of financial information and critical review of operating cycles.',
+        'projects.schoolhub.responsibilities': 'Identification of audit risks, validation of closing entries, and drafting the general report.',
 
         // Mission 2
         'projects.medipass.cat': 'Tax Advisory',
-        'projects.medipass.desc': 'Tax restructuring of a group of companies (Holding). Optimization of tax integration.',
-        'projects.medipass.prob': 'Tax burden unsuited to the group structure.',
-        'projects.medipass.sol': 'Establishment of a holding company and tax integration regime.',
+        'projects.medipass.role': 'Tax Consultant',
+        'projects.medipass.duration': '2022 – 2023',
+        'projects.medipass.activities': 'Legal and tax restructuring of a group of companies.',
+        'projects.medipass.missions': 'Optimization of the holding structure via the implementation of an active holding company.',
+        'projects.medipass.responsibilities': 'Preliminary tax audit, implementation of the tax integration regime, and monitoring of management fee agreements.',
 
         // Mission 3
         'projects.sondagepro.cat': 'Social Management',
-        'projects.sondagepro.desc': 'Social compliance audit and implementation of a profit-sharing agreement.',
-        'projects.sondagepro.prob': 'URSSAF adjustment risks and need for employee motivation.',
-        'projects.sondagepro.sol': 'Correction of anomalies and drafting of a custom profit-sharing agreement.',
+        'projects.sondagepro.role': 'HR & Social Consultant',
+        'projects.sondagepro.duration': '2021 – 2022',
+        'projects.sondagepro.activities': 'Social compliance audit and optimization of employer contributions.',
+        'projects.sondagepro.missions': 'Securing the social climate and implementing employee savings schemes.',
+        'projects.sondagepro.responsibilities': 'Review of employment contracts, calculation of social provisions, and drafting of a custom profit-sharing agreement.',
 
         // Mission 4
         'projects.comotorage.cat': 'Business Creation',
-        'projects.comotorage.desc': 'Support for the creation of an innovative start-up: Business Plan, statutes, financing.',
-        'projects.comotorage.prob': 'Complexity of legal and tax choices at startup.',
-        'projects.comotorage.sol': 'Drafting of the BP, choice of SAS IS, and obtaining a bank loan.',
+        'projects.comotorage.role': 'Business Advisor',
+        'projects.comotorage.duration': '2020 – 2021',
+        'projects.comotorage.activities': 'Support for the creation of an innovative real estate start-up.',
+        'projects.comotorage.missions': 'Preparation of the projected Business Plan and search for bank financing.',
+        'projects.comotorage.responsibilities': 'Advice on the choice of legal form (SAS), drafting of statutes, and preparation of the financing file.',
 
         // Mission 5
         'projects.objectif2026.cat': 'Management & Reporting',
-        'projects.objectif2026.desc': 'Implementation of management dashboards (KPIs) for monthly activity monitoring.',
-        'projects.objectif2026.prob': 'Lack of visibility on profitability in real time.',
-        'projects.objectif2026.sol': 'Automated dashboard under PowerBI connected to accounting.',
+        'projects.objectif2026.role': 'Financial Controller',
+        'projects.objectif2026.duration': '2019 – 2020',
+        'projects.objectif2026.activities': 'Implementation of management tools and monthly reporting.',
+        'projects.objectif2026.missions': 'Digitalization of performance monitoring via automated dashboards.',
+        'projects.objectif2026.responsibilities': 'Definition of key performance indicators (KPIs), connection of accounting flows to Power BI, and presentation of results to management.',
 
         // Skills
         'skills.title': 'Areas of Competence',
         'skills.subtitle': 'Multidisciplinary expertise at the service of your company',
         'skills.learning': 'Regulatory watch',
-        'skills.languages': 'Accounting',
-        'skills.frameworks': 'Taxation',
-        'skills.databases': 'Legal',
-        'skills.ai': 'Tools & Systems',
-        'skills.tools': 'Audit',
-        'skills.other': 'Soft Skills',
+        'skills.technical.title': 'Technical Expertise',
+        'skills.software.title': 'Software Proficiency',
+
+        'skills.accounting.title': 'Chartered Accountancy',
+        'skills.accounting.desc': 'Accounting maintenance and review, preparation of balance sheets and tax returns. Monthly reporting for precise management.',
+
+        'skills.tax.title': 'Corporate Taxation',
+        'skills.tax.desc': 'Tax calculations, tax returns, and optimization of your tax burden. Assistance in case of audit.',
+
+        'skills.legal.title': 'Legal & Corporate',
+        'skills.legal.desc': 'Annual legal secretariat, drafting of statutes, and structural changes. Company law.',
+
+        'skills.audit.title': 'Audit & Control',
+        'skills.audit.desc': 'Statutory and contractual audit. Account certification and evaluation of internal control procedures.',
+
+        'skills.soft.title': 'Management & Advisory',
+        'skills.soft.desc': 'Team management, client relations, and business English. Strong analyzer and strategic advisory skills.',
+
+        'skills.excel.title': 'Microsoft Excel',
+        'skills.excel.desc': 'Expert mastery of advanced functions, VBA, PowerQuery, and PowerPivot for data flow automation.',
+
+        'skills.bi.title': 'Power BI & Reporting',
+        'skills.bi.desc': 'Design of interactive and visual dashboards for performance management and decision support.',
+
+        'skills.logiciel.title': 'Accounting Software',
+        'skills.logiciel.desc': 'Daily use of Sage and Cegid solutions for account production and financial statements.',
 
         // Contact
         'contact.title': 'Contact Me',
@@ -249,9 +325,11 @@ const translations = {
         'contact.form.message': 'Subject',
         'contact.form.messagePlaceholder': 'Describe your need...',
         'contact.form.submit': 'Send request',
-        'contact.footer1': 'HOUAGA Mat-Colin Firm — Chartered Accountancy & Audit',
+
+        'contact.footer1': 'HOUAGA Mat-Colin Firm — Chartered Accounting & Audit',
         'contact.footer2': '© 2025 HOUAGA Mat-Colin • All rights reserved',
-    }
+        'contact.footer.credit': 'Realized by',
+    },
 };
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
