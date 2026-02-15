@@ -5,37 +5,44 @@
  */
 import { useState, useRef } from 'react';
 import { motion, AnimatePresence, useInView } from 'framer-motion';
-import { GraduationCap, Target, ChevronDown, Calendar, MapPin, School, X, Award, Brain } from 'lucide-react';
+import { GraduationCap, Target, Calendar, MapPin, School, X, Award, Brain } from 'lucide-react';
 import { useLanguage } from '../provider/LanguageContext';
+import aboutPhoto from '../../assets/Photo (3).png';
 
 export function About() {
     const { t } = useLanguage();
     const ref = useRef(null);
-    // isInView : Détecte quand la section entre dans l'écran pour déclencher les animations
     const isInView = useInView(ref, { once: true, margin: "-100px" });
-
-    // isModalOpen : État pour afficher ou masquer la modale du parcours académique
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     const academicTimeline = [
         {
-            year: 'about.edu.2024.year',
-            title: 'about.edu.2024.title',
-            inst: 'about.edu.2024.inst',
-            univ: 'about.edu.2024.univ',
-            icon: GraduationCap, // DEC
+            year: 'about.edu.1.year',
+            title: 'about.edu.1.title',
+            inst: 'about.edu.1.inst',
+            univ: 'about.edu.1.univ',
+            icon: GraduationCap,
         },
         {
-            year: 'about.edu.2023.year',
-            title: 'about.edu.2023.title',
-            inst: 'about.edu.2023.inst',
-            icon: School, // DSCG
+            year: 'about.edu.2.year',
+            title: 'about.edu.2.title',
+            inst: 'about.edu.2.inst',
+            univ: 'about.edu.2.univ',
+            icon: School,
         },
         {
-            year: 'about.edu.2022.year',
-            title: 'about.edu.2022.title',
-            desc: 'about.edu.2022.desc',
-            icon: Award, // DCG
+            year: 'about.edu.3.year',
+            title: 'about.edu.3.title',
+            inst: 'about.edu.3.inst',
+            univ: 'about.edu.3.univ',
+            icon: Award,
+        },
+        {
+            year: 'about.edu.4.year',
+            title: 'about.edu.4.title',
+            inst: 'about.edu.4.inst',
+            univ: 'about.edu.4.univ',
+            icon: School,
         },
     ];
 
@@ -47,12 +54,13 @@ export function About() {
             isClickable: true,
         },
         {
-            icon: Brain, // Analyse
+            icon: Award,
             titleKey: 'about.highlight2.title',
             descKey: 'about.highlight2.desc',
+            isClickable: true,
         },
         {
-            icon: Target, // Strategie
+            icon: Target,
             titleKey: 'about.highlight3.title',
             descKey: 'about.highlight3.desc',
         },
@@ -84,15 +92,13 @@ export function About() {
                     <div className="w-20 h-1 bg-primary mx-auto" />
                 </motion.div>
 
-                <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
+                {/* Section 1 : Texte à gauche + Photo à droite */}
+                <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
                     {/* Left: Main description */}
                     <motion.div
                         initial={{ opacity: 0, x: -30 }}
                         animate={isInView ? { opacity: 1, x: 0 } : {}}
-                        transition={{
-                            duration: 0.6,
-                            delay: 0.2
-                        }}
+                        transition={{ duration: 0.6, delay: 0.2 }}
                     >
                         <h3 className="text-3xl font-bold text-foreground mb-6">
                             {t('about.subtitle1')}<br />
@@ -107,15 +113,35 @@ export function About() {
                         </div>
                     </motion.div>
 
-                    {/* Droite : Points forts cliquables (Highlights) */}
+                    {/* Right: Photo */}
                     <motion.div
-                        initial={{ opacity: 0, x: 30 }}
-                        animate={isInView ? { opacity: 1, x: 0 } : {}}
-                        transition={{
-                            duration: 0.6,
-                            delay: 0.4
-                        }}
-                        className="space-y-6"
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        animate={isInView ? { opacity: 1, scale: 1 } : {}}
+                        transition={{ duration: 0.6, delay: 0.4 }}
+                        className="flex justify-center"
+                    >
+                        <div className="relative">
+                            <div className="w-72 h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-[2rem] overflow-hidden border-4 border-primary/20 shadow-2xl shadow-primary/10">
+                                <img
+                                    src={aboutPhoto}
+                                    alt="Edem HOUAGA"
+                                    className="w-full h-full object-cover object-top"
+                                />
+                            </div>
+                            {/* Décoration */}
+                            <div className="absolute -z-10 -bottom-3 -right-3 w-full h-full rounded-[2rem] bg-primary/10" />
+                        </div>
+                    </motion.div>
+                </div>
+
+                {/* Section 2 : Highlights à gauche + Stats en colonne à droite */}
+                <div className="grid md:grid-cols-[1fr_auto] gap-8 mb-20">
+                    {/* Left: Highlights */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={isInView ? { opacity: 1, y: 0 } : {}}
+                        transition={{ duration: 0.6, delay: 0.6 }}
+                        className="space-y-4"
                     >
                         {highlights.map((item, index) => (
                             <motion.div
@@ -123,27 +149,29 @@ export function About() {
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                                 transition={{
-                                    duration: 0.6,
-                                    delay: 0.1 * index + 0.6
+                                    duration: 0.5,
+                                    delay: 0.1 * index + 0.7,
+                                    ease: "easeOut"
+                                }}
+                                whileHover={{
+                                    y: -4,
+                                    transition: { type: "spring", stiffness: 300, damping: 20 }
                                 }}
                                 whileTap={{ scale: 0.98 }}
-                                className={`p-6 rounded-xl bg-foreground/5 border border-foreground/10 backdrop-blur-sm hover:bg-foreground/10 transition-all duration-300 ${item.isClickable ? 'cursor-pointer select-none group/item' : ''}`}
+                                className={`p-5 rounded-xl bg-foreground/5 border border-foreground/10 backdrop-blur-sm hover:bg-foreground/8 hover:border-primary/25 hover:shadow-lg hover:shadow-primary/5 transition-all duration-500 ease-out ${item.isClickable ? 'cursor-pointer select-none group/item' : ''}`}
                                 onClick={() => {
                                     if (item.isClickable) setIsModalOpen(true);
                                 }}
                             >
                                 <div className="flex items-start gap-4">
-                                    <div className="p-3 rounded-lg bg-primary/10 border border-primary/20">
+                                    <div className="p-3 rounded-lg bg-primary/10 border border-primary/20 transition-all duration-300 group-hover/item:bg-primary/20 group-hover/item:scale-110">
                                         <item.icon className="w-6 h-6 text-primary" />
                                     </div>
                                     <div className="flex-1">
-                                        <div className="flex items-center justify-between mb-2">
-                                            <h4 className="font-bold text-foreground">{t(item.titleKey)}</h4>
+                                        <div className="flex items-center justify-between mb-1">
+                                            <h4 className="font-bold text-foreground transition-colors duration-300 group-hover/item:text-primary">{t(item.titleKey)}</h4>
                                             {item.isClickable && (
-                                                <div className="text-primary opacity-50 group-hover/item:opacity-100 flex items-center gap-1">
-                                                    <span className="text-xs font-medium hidden sm:inline">{t('about.highlight1.cta')}</span>
-                                                    <ChevronDown className="w-5 h-5 -rotate-90" />
-                                                </div>
+                                                <div className="w-2.5 h-2.5 rounded-full bg-primary/40 group-hover/item:bg-primary group-hover/item:scale-125 transition-all duration-300 animate-pulse" />
                                             )}
                                         </div>
                                         <p className="text-sm text-muted-foreground">{t(item.descKey)}</p>
@@ -152,30 +180,30 @@ export function About() {
                             </motion.div>
                         ))}
                     </motion.div>
-                </div>
 
-                {/* Bottom stats */}
-                <motion.div
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                    transition={{
-                        duration: 0.6,
-                        delay: 0.8
-                    }}
-                    className="grid grid-cols-2 md:grid-cols-4 gap-6"
-                >
-                    {stats.map((stat, index) => (
-                        <div
-                            key={index}
-                            className="text-center p-6 rounded-xl bg-foreground/5 border border-foreground/10 backdrop-blur-sm group/stat hover:border-primary/30 transition-all duration-300"
-                        >
-                            <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary-dark to-accent bg-clip-text text-transparent mb-2">
-                                {stat.value}
-                            </div>
-                            <div className="text-sm text-muted-foreground">{t(stat.labelKey)}</div>
-                        </div>
-                    ))}
-                </motion.div>
+                    {/* Right: Stats en colonne (petits rectangles) */}
+                    <motion.div
+                        initial={{ opacity: 0, x: 30 }}
+                        animate={isInView ? { opacity: 1, x: 0 } : {}}
+                        transition={{ duration: 0.6, delay: 0.8 }}
+                        className="flex flex-row md:flex-col gap-3 md:w-44"
+                    >
+                        {stats.map((stat, index) => (
+                            <motion.div
+                                key={index}
+                                initial={{ opacity: 0, scale: 0.9 }}
+                                animate={isInView ? { opacity: 1, scale: 1 } : {}}
+                                transition={{ duration: 0.4, delay: 0.1 * index + 0.9 }}
+                                className="flex-1 md:flex-none text-center px-4 py-4 rounded-xl bg-foreground/5 border border-foreground/10 backdrop-blur-sm hover:border-primary/30 transition-all duration-300"
+                            >
+                                <div className="text-2xl font-bold bg-gradient-to-r from-primary-dark to-accent bg-clip-text text-transparent mb-1">
+                                    {stat.value}
+                                </div>
+                                <div className="text-xs text-muted-foreground leading-tight">{t(stat.labelKey)}</div>
+                            </motion.div>
+                        ))}
+                    </motion.div>
+                </div>
             </div>
 
             {/* Modal du parcours académique (Affichée avec AnimatePresence pour une transition fluide) */}
@@ -243,13 +271,12 @@ export function About() {
                                 {academicTimeline.map((edu, idx) => (
                                     <motion.div
                                         key={idx}
-                                        initial={{ x: -30, opacity: 0 }}
-                                        animate={{ x: 0, opacity: 1 }}
+                                        initial={{ y: 15, opacity: 0 }}
+                                        animate={{ y: 0, opacity: 1 }}
                                         transition={{
-                                            type: "spring",
-                                            damping: 25,
-                                            stiffness: 120,
-                                            delay: 0.1 * idx + 0.5
+                                            duration: 0.4,
+                                            ease: "easeOut",
+                                            delay: 0.12 * idx + 0.4
                                         }}
                                         className="relative group/edu"
                                     >
@@ -286,13 +313,7 @@ export function About() {
                                                                 <span>{t(edu.univ)}</span>
                                                             </div>
                                                         )}
-                                                        {edu.desc && (
-                                                            <div className="mt-4 p-4 rounded-2xl bg-primary/5 border-l-4 border-primary/40">
-                                                                <p className="text-sm text-foreground/80 leading-relaxed font-semibold italic">
-                                                                    {t(edu.desc)}
-                                                                </p>
-                                                            </div>
-                                                        )}
+
                                                     </div>
                                                 </div>
                                             </div>

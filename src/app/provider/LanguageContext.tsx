@@ -23,7 +23,7 @@ const translations = {
         'hero.title1': 'Expertise et Conseil',
         'hero.title2': "pour votre réussite",
         'hero.description': "Accompagnement stratégique, audit financier et optimisation fiscale pour les entreprises et les particuliers. Une vision claire de vos chiffres pour des décisions éclairées.",
-        'hero.cta1': 'Mes services',
+        'hero.cta1': 'A propos',
         'hero.cta2': 'Contact',
 
         // Menu
@@ -36,9 +36,9 @@ const translations = {
         'menu.skills': 'Compétences',
         'menu.skills.sub': 'Domaines d\'expertise',
         'menu.contact': 'Contact',
-        'menu.contact.sub': 'Prendre rendez-vous',
-        'menu.cv': 'Télécharger CV',
-        'menu.cv.sub': 'Format PDF',
+        'menu.contact.sub': '',
+        'menu.cv': 'Mon CV',
+        'menu.cv.sub': 'Consulter et télécharger',
 
         // About
         'about.title': 'À propos',
@@ -47,22 +47,28 @@ const translations = {
         'about.p1': "Avec une solide formation en comptabilité et gestion, je me consacre à l'accompagnement des entreprises dans leur développement économique et stratégique. Mon approche repose sur la rigueur, l'éthique et une écoute active des besoins clients.",
         'about.p2': "L'expertise comptable ne se limite pas aux chiffres ; c'est un levier de performance. J'interviens dans l'audit légal, le conseil fiscal et la gestion sociale pour sécuriser et optimiser vos activités.",
         'about.p3': "Mon objectif est de vous fournir une information financière fiable et pertinente, vous permettant de vous concentrer sur votre cœur de métier en toute sérénité.",
-        'about.highlight1.title': "Parcours Académique",
+        'about.highlight1.title': 'Parcours Académique',
         'about.highlight1.desc': "Diplômé d'Expertise Comptable (En cours de finalisation)",
-        'about.highlight1.detailsTitle': "Mon parcours académique et professionnel",
+        'about.highlight1.detailsTitle': 'Mon parcours académique et professionnel',
         'about.highlight1.cta': 'Voir détails',
-        'about.edu.2024.year': "2024 – Présent",
-        'about.edu.2024.title': "DEC – Diplôme d'Expertise Comptable",
-        'about.edu.2024.inst': "Ordre des Experts-Comptables",
-        'about.edu.2024.univ': "Paris, France",
-        'about.edu.2023.year': "2022 – 2024",
-        'about.edu.2023.title': "DSCG – Diplôme Supérieur de Comptabilité et de Gestion",
-        'about.edu.2023.inst': "INTEC / CNAM",
-        'about.edu.2022.year': "2019 – 2022",
-        'about.edu.2022.title': "DCG – Diplôme de Comptabilité et de Gestion",
-        'about.edu.2022.desc': "Mention Bien — Major de promotion",
-        'about.highlight2.title': 'Rigueur & Analyse',
-        'about.highlight2.desc': 'Capacité d\'analyse approfondie des états financiers et des risques',
+        'about.edu.1.year': '2023 – 2025',
+        'about.edu.1.title': 'Diplôme Supérieur de Comptabilité et de Gestion (DSCG / DSGC)',
+        'about.edu.1.inst': 'École Supérieure d\'Audit et de Management (ESAM)',
+        'about.edu.1.univ': 'Lomé, Togo',
+        'about.edu.2.year': '2020 – 2023',
+        'about.edu.2.title': 'Diplôme de Comptabilité et de Gestion (DCG / DGC)',
+        'about.edu.2.inst': 'CNAM INTEC par ESEC-INTEC BENIN',
+        'about.edu.2.univ': 'Cotonou, Bénin',
+        'about.edu.3.year': '2020 – 2023',
+        'about.edu.3.title': 'Licence Finance Comptabilité et Audit (LFCA) // Comptabilité gestion(LCG)',
+        'about.edu.3.inst': 'École Supérieure d\'Expertise Comptable (ESEC-INTEC BENIN)',
+        'about.edu.3.univ': 'Cotonou, Bénin',
+        'about.edu.4.year': '2019 – 2020',
+        'about.edu.4.title': 'Baccalauréat scientifique',
+        'about.edu.4.inst': 'Collège Catholique Pierre Joseph de Clorivière',
+        'about.edu.4.univ': 'Abomey-Calavi, Bénin',
+        'about.highlight2.title': 'Diplôme, attestation et certificat',
+        'about.highlight2.desc': 'DEC, DSCG, DCG et certifications professionnelles.',
         'about.highlight3.title': 'Conseil Stratégique',
         'about.highlight3.desc': 'Accompagnement des dirigeants dans les prises de décisions complexes',
         'about.stat1': 'Missions réalisées',
@@ -72,58 +78,38 @@ const translations = {
 
         // Projects (Missions)
         'projects.title': 'Expériences professionnelles',
-        'projects.subtitle': 'Exemples d\'interventions réalisées pour nos clients',
-        'projects.activities': 'Activités',
-        'projects.missions': 'Missions',
-        'projects.responsibilities': 'Responsabilités',
+        'projects.subtitle': 'Mes stages et missions en entreprise',
+        'projects.description': 'Description',
+        'projects.competences': 'Expertise mobilisée',
         'projects.duration': 'Durée',
         'projects.role': 'Poste occupé',
-        'projects.details': 'Détails de la mission',
-        'projects.modal.title': 'Détails de l\'intervention',
+        'projects.details': 'Voir les détails',
+        'projects.modal.title': 'Détails du stage',
         'projects.modal.subtitle': 'Vue approfondie de la mission et des résultats',
-        'projects.code': 'Réference',
-        'projects.cta': 'Contactez-moi pour une étude personnalisée',
-        'projects.ctaBtn': 'Demander un devis',
 
-        // Mission 1
-        'projects.schoolhub.cat': 'Audit Légal',
-        'projects.schoolhub.role': 'Auditeur Senior',
-        'projects.schoolhub.duration': '2023 – Présent',
-        'projects.schoolhub.activities': 'Audit légal des comptes annuels d\'une PME industrielle (CA > 10M€).',
-        'projects.schoolhub.missions': 'Certification de l\'information financière et revue critique des cycles d\'exploitation.',
-        'projects.schoolhub.responsibilities': 'Identification des risques d\'audit, validation des écritures de clôture et rédaction du rapport général.',
+        // Stage 1 - SODEXCA 2025
+        'projects.stage1.role': 'SODEXCA',
+        'projects.stage1.company': 'Stagiaire comptable',
+        'projects.stage1.location': 'Agontikon-Cotonou, Bénin',
+        'projects.stage1.duration': 'Juillet 2025 - Août 2025',
+        'projects.stage1.description': 'Participation active à l\'élaboration des états financiers annuels : traitement comptable des pièces de banque, analyse des comptes et rapprochements bancaires. • Réalisation d\'une mission d\'inventaires physiques : contrôle physique des stocks, identification des écarts ou anomalies et production d\'une fiche de synthèse détaillée apportant une vision claire des écarts de stock.',
+        'projects.stage1.competences': 'Comptabilité générale, Rapprochement bancaire, Inventaire physique, Excel',
 
-        // Mission 2
-        'projects.medipass.cat': 'Conseil Fiscal',
-        'projects.medipass.role': 'Consultant Fiscalité',
-        'projects.medipass.duration': '2022 – 2023',
-        'projects.medipass.activities': 'Restructuration juridique et fiscale d\'un groupe de sociétés.',
-        'projects.medipass.missions': 'Optimisation de la structure détenue via la mise en place d\'une holding animatrice.',
-        'projects.medipass.responsibilities': 'Audit fiscal préalable, mise en place du régime d\'intégration fiscale et suivi des conventions de management fees.',
+        // Stage 2 - SODEXCA 2024
+        'projects.stage2.role': 'SODEXCA',
+        'projects.stage2.company': 'Stagiaire comptable',
+        'projects.stage2.location': 'Agontikon-Cotonou, Bénin',
+        'projects.stage2.duration': 'Juin 2024 - Août 2024',
+        'projects.stage2.description': 'Participation active à l\'élaboration des états financiers annuels. Traitement comptable des pièces de banque, analyse des comptes et rapprochements bancaires. • Vérification et contrôle des écritures comptables.',
+        'projects.stage2.competences': 'Comptabilité générale, Rapprochement bancaire, Analyse des comptes',
 
-        // Mission 3
-        'projects.sondagepro.cat': 'Gestion Sociale',
-        'projects.sondagepro.role': 'Consultant RH & Social',
-        'projects.sondagepro.duration': '2021 – 2022',
-        'projects.sondagepro.activities': 'Audit de conformité sociale et optimisation des charges patronales.',
-        'projects.sondagepro.missions': 'Sécurisation du climat social et mise en place de dispositifs d\'épargne salariale.',
-        'projects.sondagepro.responsibilities': 'Revue des contrats de travail, calcul des provisions sociales et rédaction d\'un accord d\'intéressement sur mesure.',
-
-        // Mission 4
-        'projects.comotorage.cat': 'Création d\'entreprise',
-        'projects.comotorage.role': 'Conseiller en Création',
-        'projects.comotorage.duration': '2020 – 2021',
-        'projects.comotorage.activities': 'Accompagnement à la création d\'une start-up innovante dans l\'immobilier.',
-        'projects.comotorage.missions': 'Établissement du Business Plan prévisionnel et recherche de financements bancaires.',
-        'projects.comotorage.responsibilities': 'Conseil sur le choix de la forme juridique (SAS), rédaction des statuts et montage du dossier de financement.',
-
-        // Mission 5
-        'projects.objectif2026.cat': 'Pilotage & Reporting',
-        'projects.objectif2026.role': 'Contrôleur de Gestion',
-        'projects.objectif2026.duration': '2019 – 2020',
-        'projects.objectif2026.activities': 'Mise en place d\'outils de pilotage et de reporting mensuel.',
-        'projects.objectif2026.missions': 'Digitalisation du suivi de la performance via des dashboards automatisés.',
-        'projects.objectif2026.responsibilities': 'Définition des indicateurs clés (KPI), connexion des flux comptables à Power BI et présentation des résultats à la direction.',
+        // Stage 3 - NCI 2022
+        'projects.stage3.role': 'New Covenant International (NCI)',
+        'projects.stage3.company': 'Stagiaire comptable et auditeur',
+        'projects.stage3.location': 'Kindonou-Cotonou, Bénin',
+        'projects.stage3.duration': 'Juin 2022 - Août 2022',
+        'projects.stage3.description': 'Réalisation du contrôle interne de deux projets : observations sur la mobilisation des ressources, examen de l\'exécution des dépenses et contrôle de la conformité des rapports financiers et des dépenses. Vérification des impôts déclarés assurant l\'exactitude des déclarations fiscales. Participation active à l\'élaboration des états financiers annuels.',
+        'projects.stage3.competences': 'Contrôle interne, Audit, Fiscalité, États financiers',
 
         // Skills
         'skills.title': 'Domaines de Compétence',
@@ -132,39 +118,62 @@ const translations = {
         'skills.technical.title': 'Expertise Technique',
         'skills.software.title': 'Maîtrise Logicielle',
 
-        'skills.accounting.title': 'Expertise Comptable',
-        'skills.accounting.desc': 'Tenue et révision comptable, établissement des bilans et liasses fiscales. Reporting mensuel pour un pilotage précis.',
+        'skills.accounting.title': 'Comptabilité',
+        'skills.accounting.desc': 'Tenue de la comptabilité, analyse des comptes sociaux, travaux d\'inventaires physiques et de fin d\'exercice, reporting financier',
 
         'skills.tax.title': 'Fiscalité des Entreprises',
-        'skills.tax.desc': 'Calcul des taxes, déclarations fiscales et optimisation de votre charge fiscale. Assistance en cas de contrôle.',
+        'skills.tax.desc': 'Calcul des impôts et taxes, suivi et contrôle des déclarations fiscales, optimisation des charges fiscales.',
 
         'skills.legal.title': 'Juridique & Sociétés',
-        'skills.legal.desc': 'Secrétariat juridique annuel, rédaction de statuts et modifications de structure. Droit des sociétés.',
+        'skills.legal.desc': 'Constitution de société, fonctionnement et droits des associés. Modification, transformation et dissolution de la structure.',
 
         'skills.audit.title': 'Audit & Contrôle',
-        'skills.audit.desc': 'Audit légal et contractuel. Certification des comptes et évaluation des procédures de contrôle interne.',
+        'skills.audit.desc': 'Audit des projets ONG, évaluation des procédures de contrôle interne, établissement de rapport de synthèse.',
 
-        'skills.soft.title': 'Management & Conseil',
-        'skills.soft.desc': 'Gestion d\'équipe, relation client et anglais des affaires. Force de proposition et esprit d\'analyse stratégique.',
+        'skills.soft.title': 'Gestion & Conseil',
+        'skills.soft.desc': 'Force de proposition et esprit d\'analyse critique et stratégique. Gestion d\'équipe et relation client.',
+
+        'skills.finance.title': 'Analyse Financière',
+        'skills.finance.desc': 'Évaluation de la santé financière d\'une entreprise en examinant son niveau d\'activité, l\'équilibre de sa structure financière, son aptitude à générer des profits et à rembourser ses dettes à court et long termes.',
+
+        'skills.restructuring.title': 'Opération de Restructuration',
+        'skills.restructuring.desc': 'Appréhension des opérations de fusion, scissions, apports partiels d\'actifs, acquisitions et transformations.',
+
+        'skills.word.title': 'Microsoft Word',
+        'skills.word.desc': 'Traitement de texte.',
+
+        'skills.ppt.title': 'Microsoft PowerPoint',
+        'skills.ppt.desc': 'Présentation claire et attrayante.',
 
         'skills.excel.title': 'Microsoft Excel',
-        'skills.excel.desc': 'Maîtrise experte des fonctions avancées, VBA, PowerQuery et PowerPivot pour l\'automatisation des flux de données.',
+        'skills.excel.desc': 'Maîtrise des fonctions de calculs automatisés, de création de tableaux croisés dynamiques, de VBA, de plannings, de graphiques et de bases de données.',
 
-        'skills.bi.title': 'Power BI & Reporting',
-        'skills.bi.desc': 'Conception de dashboards interactifs et visuels pour le pilotage de la performance et l\'aide à la décision.',
+        'skills.hypersoft.title': 'Hypersoft',
+        'skills.hypersoft.desc': 'Logiciel comptable SYSCOHADA permettant la tenue de la comptabilité : saisie des opérations, édition des documents comptables propres à chaque entité (états financiers).',
+        'skills.hypersoft.status': 'Utilisation en cabinet',
 
-        'skills.logiciel.title': 'Logiciels Comptables',
-        'skills.logiciel.desc': 'Utilisation quotidienne des solutions Sage et Cegid pour la production comptable et les états financiers.',
+        'skills.sage.title': 'Sage 100 Comptabilité i7',
+        'skills.sage.desc': 'Logiciel de gestion comptable et financière complet destiné aux PME. Utilisation quotidienne pour la production comptable et des états financiers.',
+        'skills.sage.status': 'Formation suivie',
+
+        'skills.bi.title': 'Power BI',
+        'skills.bi.desc': 'Analyser et visualiser des données provenant de multiples sources pour créer des dashboards interactifs et visuels pour le pilotage de la performance.',
+        'skills.bi.status': 'Formation en cours',
+
+        // CV Viewer
+        'cv.title': 'Mon Curriculum Vitae',
+        'cv.subtitle': 'Consultez mon CV ci-dessous ou téléchargez-le en PDF.',
+        'cv.download': 'Télécharger le CV',
 
         // Contact
-        'contact.title': 'Prendre Contact',
+        'contact.title': 'Me contacter',
         'contact.subtitle': 'Discutons de vos besoins et de vos projets.',
         'contact.form.title': "Formulaire de contact",
         'contact.form.name': 'Nom',
         'contact.form.namePlaceholder': 'Votre nom / Société',
         'contact.form.email': 'Email',
         'contact.form.emailPlaceholder': 'contact@societe.com',
-        'contact.form.message': 'Objet de la demande',
+        'contact.form.message': 'Message',
         'contact.form.messagePlaceholder': 'Décrivez votre besoin...',
         'contact.form.submit': 'Envoyer la demande',
 
@@ -181,7 +190,7 @@ const translations = {
         'hero.title1': 'Expertise and Advice',
         'hero.title2': "for your success",
         'hero.description': "Strategic support, financial audit, and tax optimization for businesses and individuals. A clear vision of your numbers for informed decisions.",
-        'hero.cta1': 'My services',
+        'hero.cta1': 'About',
         'hero.cta2': 'Contact',
 
         // Menu
@@ -194,9 +203,9 @@ const translations = {
         'menu.skills': 'Expertise',
         'menu.skills.sub': 'Areas of expertise',
         'menu.contact': 'Contact',
-        'menu.contact.sub': 'Book an appointment',
-        'menu.cv': 'Download Resume',
-        'menu.cv.sub': 'PDF Format',
+        'menu.contact.sub': '',
+        'menu.cv': 'My Resume',
+        'menu.cv.sub': 'View and download',
 
         // About
         'about.title': 'About',
@@ -205,22 +214,28 @@ const translations = {
         'about.p1': 'With a solid background in accounting and management, I adhere to supporting companies in their economic and strategic development. My approach is based on rigor, ethics, and active listening to client needs.',
         'about.p2': 'Public accounting is not limited to numbers; it is a performance lever. I intervene in statutory audit, tax advice, and social management to secure and optimize your activities.',
         'about.p3': 'My goal is to provide you with reliable and relevant financial information, allowing you to focus on your core business with peace of mind.',
-        'about.highlight1.title': 'Academic Journey',
+        'about.highlight1.title': 'Academic Background',
         'about.highlight1.desc': 'Chartered Accountancy Graduate (In progress)',
         'about.highlight1.detailsTitle': 'My academic and professional journey',
         'about.highlight1.cta': 'View details',
-        'about.edu.2024.year': "2024 – Present",
-        'about.edu.2024.title': "DEC – Diploma of Chartered Accountancy",
-        'about.edu.2024.inst': "Order of Chartered Accountants",
-        'about.edu.2024.univ': "Paris, France",
-        'about.edu.2023.year': "2022 – 2024",
-        'about.edu.2023.title': "DSCG – Higher Diploma in Accounting and Management",
-        'about.edu.2023.inst': "INTEC / CNAM",
-        'about.edu.2022.year': "2019 – 2022",
-        'about.edu.2022.title': "DCG – Diploma in Accounting and Management",
-        'about.edu.2022.desc': "High Honors — Valedictorian",
-        'about.highlight2.title': 'Rigor & Analysis',
-        'about.highlight2.desc': 'In-depth analysis of financial statements and risks',
+        'about.edu.1.year': '2023 – 2025',
+        'about.edu.1.title': 'Higher Diploma in Accounting and Management (DSCG / DSGC)',
+        'about.edu.1.inst': 'School of Audit and Management (ESAM)',
+        'about.edu.1.univ': 'Lomé, Togo',
+        'about.edu.2.year': '2020 – 2023',
+        'about.edu.2.title': 'Diploma in Accounting and Management (DCG / DGC)',
+        'about.edu.2.inst': 'CNAM INTEC by ESEC-INTEC BENIN',
+        'about.edu.2.univ': 'Cotonou, Benin',
+        'about.edu.3.year': '2020 – 2023',
+        'about.edu.3.title': 'Bachelor in Finance, Accounting and Audit (LFCA / LCG)',
+        'about.edu.3.inst': 'School of Chartered Accountancy (ESEC-INTEC BENIN)',
+        'about.edu.3.univ': 'Cotonou, Benin',
+        'about.edu.4.year': '2019 – 2020',
+        'about.edu.4.title': 'Scientific Baccalauréat',
+        'about.edu.4.inst': 'Collège Catholique Pierre Joseph de Clorivière',
+        'about.edu.4.univ': 'Abomey-Calavi, Benin',
+        'about.highlight2.title': 'Degrees, certificates & credentials',
+        'about.highlight2.desc': 'DEC, DSCG, DCG and professional certifications.',
         'about.highlight3.title': 'Strategic Advice',
         'about.highlight3.desc': 'Supporting leaders in complex decision-making',
         'about.stat1': 'Missions done',
@@ -230,58 +245,38 @@ const translations = {
 
         // Projects (Missions)
         'projects.title': 'Professional Experience',
-        'projects.subtitle': 'Examples of interventions carried out for our clients',
-        'projects.activities': 'Activities',
-        'projects.missions': 'Missions',
-        'projects.responsibilities': 'Responsibilities',
+        'projects.subtitle': 'My internships and professional missions',
+        'projects.description': 'Description',
+        'projects.competences': 'Expertise used',
         'projects.duration': 'Duration',
         'projects.role': 'Position held',
-        'projects.details': 'Mission details',
-        'projects.modal.title': 'Intervention Details',
+        'projects.details': 'View details',
+        'projects.modal.title': 'Internship Details',
         'projects.modal.subtitle': 'In-depth view of the mission and results',
-        'projects.code': 'Reference',
-        'projects.cta': 'Contact me for a personalized study',
-        'projects.ctaBtn': 'Request a quote',
 
-        // Mission 1
-        'projects.schoolhub.cat': 'Statutory Audit',
-        'projects.schoolhub.role': 'Senior Auditor',
-        'projects.schoolhub.duration': '2023 – Present',
-        'projects.schoolhub.activities': 'Statutory audit of annual accounts for an industrial SME (Turnover > €10M).',
-        'projects.schoolhub.missions': 'Certification of financial information and critical review of operating cycles.',
-        'projects.schoolhub.responsibilities': 'Identification of audit risks, validation of closing entries, and drafting the general report.',
+        // Internship 1 - SODEXCA 2025
+        'projects.stage1.role': 'SODEXCA',
+        'projects.stage1.company': 'Accounting Intern',
+        'projects.stage1.location': 'Agontikon-Cotonou, Bénin',
+        'projects.stage1.duration': 'July 2025 - August 2025',
+        'projects.stage1.description': 'Active participation in the preparation of annual financial statements: accounting treatment of bank documents, account analysis and bank reconciliations. • Completion of a physical inventory mission: physical stock control, identification of discrepancies or anomalies and production of a detailed summary sheet providing a clear view of stock discrepancies.',
+        'projects.stage1.competences': 'General Accounting, Bank Reconciliation, Physical Inventory, Excel',
 
-        // Mission 2
-        'projects.medipass.cat': 'Tax Advisory',
-        'projects.medipass.role': 'Tax Consultant',
-        'projects.medipass.duration': '2022 – 2023',
-        'projects.medipass.activities': 'Legal and tax restructuring of a group of companies.',
-        'projects.medipass.missions': 'Optimization of the holding structure via the implementation of an active holding company.',
-        'projects.medipass.responsibilities': 'Preliminary tax audit, implementation of the tax integration regime, and monitoring of management fee agreements.',
+        // Internship 2 - SODEXCA 2024
+        'projects.stage2.role': 'SODEXCA',
+        'projects.stage2.company': 'Accounting Intern',
+        'projects.stage2.location': 'Agontikon-Cotonou, Bénin',
+        'projects.stage2.duration': 'June 2024 - August 2024',
+        'projects.stage2.description': 'Active participation in the preparation of annual financial statements. • Accounting treatment of bank documents, account analysis and bank reconciliations. Verification and control of accounting entries.',
+        'projects.stage2.competences': 'General Accounting, Bank Reconciliation, Account Analysis',
 
-        // Mission 3
-        'projects.sondagepro.cat': 'Social Management',
-        'projects.sondagepro.role': 'HR & Social Consultant',
-        'projects.sondagepro.duration': '2021 – 2022',
-        'projects.sondagepro.activities': 'Social compliance audit and optimization of employer contributions.',
-        'projects.sondagepro.missions': 'Securing the social climate and implementing employee savings schemes.',
-        'projects.sondagepro.responsibilities': 'Review of employment contracts, calculation of social provisions, and drafting of a custom profit-sharing agreement.',
-
-        // Mission 4
-        'projects.comotorage.cat': 'Business Creation',
-        'projects.comotorage.role': 'Business Advisor',
-        'projects.comotorage.duration': '2020 – 2021',
-        'projects.comotorage.activities': 'Support for the creation of an innovative real estate start-up.',
-        'projects.comotorage.missions': 'Preparation of the projected Business Plan and search for bank financing.',
-        'projects.comotorage.responsibilities': 'Advice on the choice of legal form (SAS), drafting of statutes, and preparation of the financing file.',
-
-        // Mission 5
-        'projects.objectif2026.cat': 'Management & Reporting',
-        'projects.objectif2026.role': 'Financial Controller',
-        'projects.objectif2026.duration': '2019 – 2020',
-        'projects.objectif2026.activities': 'Implementation of management tools and monthly reporting.',
-        'projects.objectif2026.missions': 'Digitalization of performance monitoring via automated dashboards.',
-        'projects.objectif2026.responsibilities': 'Definition of key performance indicators (KPIs), connection of accounting flows to Power BI, and presentation of results to management.',
+        // Internship 3 - NCI 2022
+        'projects.stage3.role': 'New Covenant International (NCI)',
+        'projects.stage3.company': 'Accounting and Auditing Intern',
+        'projects.stage3.location': 'Kindonou-Cotonou, Bénin',
+        'projects.stage3.duration': 'June 2022 - August 2022',
+        'projects.stage3.description': 'Internal control of two projects: observations on resource mobilization, examination of expenditure execution and verification of financial report compliance and expenditures. Checking declared taxes to ensure accuracy of tax returns. Active participation in the preparation of annual financial statements.',
+        'projects.stage3.competences': 'Internal Control, Audit, Taxation, Financial Statements',
 
         // Skills
         'skills.title': 'Areas of Competence',
@@ -290,29 +285,52 @@ const translations = {
         'skills.technical.title': 'Technical Expertise',
         'skills.software.title': 'Software Proficiency',
 
-        'skills.accounting.title': 'Chartered Accountancy',
-        'skills.accounting.desc': 'Accounting maintenance and review, preparation of balance sheets and tax returns. Monthly reporting for precise management.',
+        'skills.accounting.title': 'Accounting',
+        'skills.accounting.desc': 'Bookkeeping, analysis of corporate accounts, physical inventory and year-end closing work, financial reporting.',
 
         'skills.tax.title': 'Corporate Taxation',
-        'skills.tax.desc': 'Tax calculations, tax returns, and optimization of your tax burden. Assistance in case of audit.',
+        'skills.tax.desc': 'Calculation of taxes and duties, monitoring and control of tax returns, optimization of tax expenses.',
 
         'skills.legal.title': 'Legal & Corporate',
-        'skills.legal.desc': 'Annual legal secretariat, drafting of statutes, and structural changes. Company law.',
+        'skills.legal.desc': 'Company formation, corporate governance and shareholders\' rights. Modification, transformation and dissolution of the corporate structure.',
 
         'skills.audit.title': 'Audit & Control',
-        'skills.audit.desc': 'Statutory and contractual audit. Account certification and evaluation of internal control procedures.',
+        'skills.audit.desc': 'Audit of NGO projects, evaluation of internal control procedures, preparation of summary reports.',
 
         'skills.soft.title': 'Management & Advisory',
-        'skills.soft.desc': 'Team management, client relations, and business English. Strong analyzer and strategic advisory skills.',
+        'skills.soft.desc': 'Strong advisory mindset with critical and strategic analysis skills. Team management and client relations.',
+
+        'skills.finance.title': 'Financial Analysis',
+        'skills.finance.desc': 'Assessment of a company\'s financial health by examining its activity level, the balance of its financial structure, its ability to generate profits and repay its short and long-term debts.',
+
+        'skills.restructuring.title': 'Restructuring Operations',
+        'skills.restructuring.desc': 'Understanding of mergers, demergers, partial asset contributions, acquisitions and corporate transformations.',
+
+        'skills.word.title': 'Microsoft Word',
+        'skills.word.desc': 'Word processing.',
+
+        'skills.ppt.title': 'Microsoft PowerPoint',
+        'skills.ppt.desc': 'Clear and attractive presentations.',
 
         'skills.excel.title': 'Microsoft Excel',
-        'skills.excel.desc': 'Expert mastery of advanced functions, VBA, PowerQuery, and PowerPivot for data flow automation.',
+        'skills.excel.desc': 'Mastery of automated calculations, pivot tables, VBA, scheduling, charts, and databases.',
 
-        'skills.bi.title': 'Power BI & Reporting',
-        'skills.bi.desc': 'Design of interactive and visual dashboards for performance management and decision support.',
+        'skills.hypersoft.title': 'Hypersoft',
+        'skills.hypersoft.desc': 'SYSCOHADA accounting software for bookkeeping: data entry, editing accounting documents specific to each entity (financial statements).',
+        'skills.hypersoft.status': 'Used in firm',
 
-        'skills.logiciel.title': 'Accounting Software',
-        'skills.logiciel.desc': 'Daily use of Sage and Cegid solutions for account production and financial statements.',
+        'skills.sage.title': 'Sage 100 Comptabilité i7',
+        'skills.sage.desc': 'Complete accounting and financial management software for SMEs. Daily use for accounting production and financial statements.',
+        'skills.sage.status': 'Training completed',
+
+        'skills.bi.title': 'Power BI',
+        'skills.bi.desc': 'Analyze and visualize data from multiple sources to create interactive dashboards for performance management.',
+        'skills.bi.status': 'Training in progress',
+
+        // CV Viewer
+        'cv.title': 'My Resume',
+        'cv.subtitle': 'View my resume below or download it as a PDF.',
+        'cv.download': 'Download Resume',
 
         // Contact
         'contact.title': 'Contact Me',
@@ -328,7 +346,7 @@ const translations = {
 
         'contact.footer1': 'HOUAGA Mat-Colin Firm — Chartered Accounting & Audit',
         'contact.footer2': '© 2025 HOUAGA Mat-Colin • All rights reserved',
-        'contact.footer.credit': 'Realized by',
+        'contact.footer.credit': 'Designed by',
     },
 };
 

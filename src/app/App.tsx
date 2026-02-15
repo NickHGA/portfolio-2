@@ -12,6 +12,7 @@ import { Projects } from './components/Projects';
 import { Skills } from './components/Skills';
 import { Contact } from './components/Contact';
 import { MenuPage } from './components/MenuPage';
+import { CvViewer } from './components/CvViewer';
 import { LoadingScreen } from './components/LoadingScreen';
 import { ParticleBackground } from './components/ParticleBackground';
 
@@ -65,6 +66,7 @@ export default function App() {
       case 'about': return <About />;
       case 'projects': return <Projects />;
       case 'skills': return <Skills />;
+      case 'cv': return <CvViewer />;
       case 'contact': return <Contact />;
       default: return <Hero onNavigate={handleNavigate} />;
     }

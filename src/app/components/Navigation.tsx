@@ -61,7 +61,7 @@ export function Navigation({ onMenuClick, onHomeClick, isMenuOpen }: NavigationP
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                     >
-                        HOUAGA Mat-Colin
+                        Edem Mat-Colin HOUAGA
                     </motion.button>
 
                     {/* Controls */}

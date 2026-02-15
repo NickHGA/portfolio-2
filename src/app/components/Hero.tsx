@@ -84,7 +84,7 @@ export function Hero({ onNavigate }: HeroProps) {
                     className="flex flex-col sm:flex-row items-center justify-center gap-6"
                 >
                     <button
-                        onClick={() => onNavigate('skills')}
+                        onClick={() => onNavigate('about')}
                         className="px-8 py-3 bg-gradient-to-r from-primary-dark to-primary text-white font-medium rounded-md hover:shadow-xl hover:shadow-primary/20 transition-all duration-300"
                     >
                         {t('hero.cta1')}

@@ -1,7 +1,14 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { Calculator, Landmark, Scale, Laptop, PieChart, Users, FileText } from 'lucide-react';
+import { Calculator, Landmark, Scale, Laptop, PieChart, Users, FileText, TrendingUp, GitMerge } from 'lucide-react';
 import { useLanguage } from '../provider/LanguageContext';
+
+import logoWord from '../../assets/logo Word.png';
+import logoPpt from '../../assets/logo powerpoint.png';
+import logoExcel from '../../assets/logo Excel.png';
+import logoHypersoft from '../../assets/Logo hypersoft.png';
+import logoSage from '../../assets/logo Sage 100 comptabilité i7.png';
+import logoPowerBi from '../../assets/logo Power Bi.png';
 
 export function Skills() {
     const { t } = useLanguage();
@@ -44,29 +51,55 @@ export function Skills() {
             color: 'text-green-600',
             bg: 'bg-green-50 dark:bg-green-900/20',
         },
+        {
+            titleKey: 'skills.finance.title',
+            descKey: 'skills.finance.desc',
+            icon: TrendingUp,
+            color: 'text-orange-600',
+            bg: 'bg-orange-50 dark:bg-orange-900/20',
+        },
+        {
+            titleKey: 'skills.restructuring.title',
+            descKey: 'skills.restructuring.desc',
+            icon: GitMerge,
+            color: 'text-indigo-600',
+            bg: 'bg-indigo-50 dark:bg-indigo-900/20',
+        },
     ];
 
     const softwareSkills = [
         {
+            titleKey: 'skills.word.title',
+            descKey: 'skills.word.desc',
+            logo: logoWord,
+        },
+        {
+            titleKey: 'skills.ppt.title',
+            descKey: 'skills.ppt.desc',
+            logo: logoPpt,
+        },
+        {
             titleKey: 'skills.excel.title',
             descKey: 'skills.excel.desc',
-            icon: Calculator,
-            color: 'text-emerald-600',
-            bg: 'bg-emerald-50 dark:bg-emerald-900/20',
+            logo: logoExcel,
+        },
+        {
+            titleKey: 'skills.hypersoft.title',
+            descKey: 'skills.hypersoft.desc',
+            logo: logoHypersoft,
+            statusKey: 'skills.hypersoft.status',
+        },
+        {
+            titleKey: 'skills.sage.title',
+            descKey: 'skills.sage.desc',
+            logo: logoSage,
+            statusKey: 'skills.sage.status',
         },
         {
             titleKey: 'skills.bi.title',
             descKey: 'skills.bi.desc',
-            icon: PieChart,
-            color: 'text-yellow-600',
-            bg: 'bg-yellow-50 dark:bg-yellow-900/20',
-        },
-        {
-            titleKey: 'skills.logiciel.title',
-            descKey: 'skills.logiciel.desc',
-            icon: Laptop,
-            color: 'text-indigo-600',
-            bg: 'bg-indigo-50 dark:bg-indigo-900/20',
+            logo: logoPowerBi,
+            statusKey: 'skills.bi.status',
         },
     ];
 
@@ -105,6 +138,52 @@ export function Skills() {
         </div>
     );
 
+    const SoftwareGrid = () => (
+        <div className="mb-20">
+            <motion.h3
+                initial={{ opacity: 0, x: -20 }}
+                animate={isInView ? { opacity: 1, x: 0 } : {}}
+                transition={{ duration: 0.6 }}
+                className="text-2xl font-bold text-foreground mb-10 flex items-center gap-4"
+            >
+                <span className="w-8 h-px bg-primary/40" />
+                {t('skills.software.title')}
+            </motion.h3>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {softwareSkills.map((tool, index) => (
+                    <motion.div
+                        key={index}
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={isInView ? { opacity: 1, y: 0 } : {}}
+                        transition={{ duration: 0.6, delay: 0.1 * index }}
+                        className="group p-8 rounded-[2rem] bg-card border border-foreground/5 shadow-sm hover:shadow-xl hover:border-primary/20 transition-all duration-500 text-center"
+                    >
+                        <div className="inline-flex p-4 rounded-2xl bg-foreground/5 mb-6">
+                            <img
+                                src={tool.logo}
+                                alt={t(tool.titleKey)}
+                                className="w-10 h-10 object-contain transition-transform duration-500 group-hover:scale-150"
+                            />
+                        </div>
+                        <h3 className="text-2xl font-bold text-foreground mb-4">
+                            {t(tool.titleKey)}
+                        </h3>
+                        <p className="text-muted-foreground leading-relaxed">
+                            {t(tool.descKey)}
+                        </p>
+                        {tool.statusKey && (
+                            <div className="mt-4 pt-4 border-t border-foreground/10">
+                                <span className="text-xs text-muted-foreground/70 italic">
+                                    {t(tool.statusKey)}
+                                </span>
+                            </div>
+                        )}
+                    </motion.div>
+                ))}
+            </div>
+        </div>
+    );
+
     return (
         <section id="skills" className="relative py-32 bg-background overflow-hidden">
             <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--border)_1px,transparent_1px),linear-gradient(to_bottom,var(--border)_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-20" />
@@ -120,20 +199,17 @@ export function Skills() {
                         {t('skills.title')}
                     </h2>
                     <div className="w-20 h-1 bg-primary mx-auto mb-6" />
-                    <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                        {t('skills.subtitle')}
-                    </p>
                 </motion.div>
 
                 <SkillGrid items={technicalSkills} titleKey="skills.technical.title" />
-                <SkillGrid items={softwareSkills} titleKey="skills.software.title" />
+                <SoftwareGrid />
 
                 {/* Additional info */}
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.6, delay: 0.8 }}
-                    className="mt-16 text-center"
+                    className="mt-28 text-center"
                 >
                     <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-foreground/5 border border-foreground/10 backdrop-blur-sm">
                         <div className="w-2 h-2 bg-primary rounded-full animate-pulse" />

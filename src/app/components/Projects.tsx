@@ -1,27 +1,25 @@
 import { useState, useRef } from 'react';
 import { motion, AnimatePresence, useInView } from 'framer-motion';
 import {
-    Database,
-    Globe,
-    Gamepad2,
-    LayoutDashboard,
+    Building2,
+    MapPin,
     Calendar,
     Briefcase,
     X,
     ArrowRight,
-    CheckCircle2
+    CheckCircle2,
+    Wrench
 } from 'lucide-react';
 import { useLanguage } from '../provider/LanguageContext';
 
 interface Project {
-    title: string;
+    titleKey: string;
     roleKey: string;
+    companyKey: string;
+    locationKey: string;
     durationKey: string;
-    category: string;
-    activitiesKey: string;
-    missionsKey: string;
-    responsibilitiesKey: string;
-    tech: string[];
+    descriptionKey: string;
+    competencesKey: string;
     icon: any;
 }
 
@@ -33,59 +31,34 @@ export function Projects() {
 
     const projects: Project[] = [
         {
-            title: 'Audit Industriel',
-            roleKey: 'projects.schoolhub.role',
-            durationKey: 'projects.schoolhub.duration',
-            category: t('projects.schoolhub.cat'),
-            activitiesKey: 'projects.schoolhub.activities',
-            missionsKey: 'projects.schoolhub.missions',
-            responsibilitiesKey: 'projects.schoolhub.responsibilities',
-            tech: ['Audit Légal', 'CAC', 'Revue de cycles', 'Excel Avancé'],
-            icon: LayoutDashboard,
+            titleKey: 'projects.stage1.company',
+            roleKey: 'projects.stage1.role',
+            companyKey: 'projects.stage1.company',
+            locationKey: 'projects.stage1.location',
+            durationKey: 'projects.stage1.duration',
+            descriptionKey: 'projects.stage1.description',
+            competencesKey: 'projects.stage1.competences',
+            icon: Building2,
         },
         {
-            title: 'Restructuration',
-            roleKey: 'projects.medipass.role',
-            durationKey: 'projects.medipass.duration',
-            category: t('projects.medipass.cat'),
-            activitiesKey: 'projects.medipass.activities',
-            missionsKey: 'projects.medipass.missions',
-            responsibilitiesKey: 'projects.medipass.responsibilities',
-            tech: ['Droit Fiscal', 'Intégration Fiscale', 'Holding', 'Juridique'],
-            icon: Database,
+            titleKey: 'projects.stage2.company',
+            roleKey: 'projects.stage2.role',
+            companyKey: 'projects.stage2.company',
+            locationKey: 'projects.stage2.location',
+            durationKey: 'projects.stage2.duration',
+            descriptionKey: 'projects.stage2.description',
+            competencesKey: 'projects.stage2.competences',
+            icon: Building2,
         },
         {
-            title: 'Audit Social',
-            roleKey: 'projects.sondagepro.role',
-            durationKey: 'projects.sondagepro.duration',
-            category: t('projects.sondagepro.cat'),
-            activitiesKey: 'projects.sondagepro.activities',
-            missionsKey: 'projects.sondagepro.missions',
-            responsibilitiesKey: 'projects.sondagepro.responsibilities',
-            tech: ['Droit Social', 'Paie', 'URSSAF', 'Management'],
-            icon: Globe,
-        },
-        {
-            title: 'Start-up Immo',
-            roleKey: 'projects.comotorage.role',
-            durationKey: 'projects.comotorage.duration',
-            category: t('projects.comotorage.cat'),
-            activitiesKey: 'projects.comotorage.activities',
-            missionsKey: 'projects.comotorage.missions',
-            responsibilitiesKey: 'projects.comotorage.responsibilities',
-            tech: ['Business Plan', 'Financement', 'Création', 'SAS'],
-            icon: Gamepad2,
-        },
-        {
-            title: 'Reporting KPI',
-            roleKey: 'projects.objectif2026.role',
-            durationKey: 'projects.objectif2026.duration',
-            category: t('projects.objectif2026.cat'),
-            activitiesKey: 'projects.objectif2026.activities',
-            missionsKey: 'projects.objectif2026.missions',
-            responsibilitiesKey: 'projects.objectif2026.responsibilities',
-            tech: ['Contrôle de Gestion', 'PowerBI', 'KPI', 'Prévisionnel'],
-            icon: LayoutDashboard,
+            titleKey: 'projects.stage3.company',
+            roleKey: 'projects.stage3.role',
+            companyKey: 'projects.stage3.company',
+            locationKey: 'projects.stage3.location',
+            durationKey: 'projects.stage3.duration',
+            descriptionKey: 'projects.stage3.description',
+            competencesKey: 'projects.stage3.competences',
+            icon: Building2,
         },
     ];
 
@@ -104,9 +77,6 @@ export function Projects() {
                         {t('projects.title')}
                     </h2>
                     <div className="w-20 h-1 bg-primary mx-auto mb-6" />
-                    <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                        {t('projects.subtitle')}
-                    </p>
                 </motion.div>
 
                 <div className="flex flex-col gap-10">
@@ -118,67 +88,41 @@ export function Projects() {
                             transition={{ duration: 0.6, delay: 0.1 * index }}
                             className="group relative"
                         >
-                            <div className="p-8 md:p-10 rounded-[2.5rem] bg-card border border-foreground/5 shadow-sm hover:shadow-2xl hover:border-primary/20 transition-all duration-500 overflow-hidden">
-                                <div className="flex flex-col md:flex-row gap-8">
-                                    {/* Contenu principal */}
-                                    <div className="flex-1 space-y-6">
-                                        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                                            <div className="space-y-1">
-                                                <span className="text-xs font-bold text-primary uppercase tracking-widest">{project.category}</span>
-                                                <h3 className="text-3xl font-black text-foreground">{project.title}</h3>
-                                                <div className="flex items-center gap-2 text-muted-foreground">
-                                                    <Briefcase className="w-4 h-4" />
-                                                    <span className="font-semibold">{t(project.roleKey)}</span>
-                                                </div>
-                                            </div>
-                                        </div>
+                            <div className="p-6 md:p-8 rounded-[2rem] bg-card border border-foreground/5 shadow-sm hover:shadow-2xl hover:border-primary/20 transition-all duration-500 overflow-hidden">
+                                <div className="flex items-center gap-6">
+                                    {/* Icône */}
+                                    <div className="p-4 rounded-2xl bg-primary/10 border border-primary/20 flex-shrink-0">
+                                        <Briefcase className="w-7 h-7 text-primary" />
+                                    </div>
 
-                                        <div className="grid sm:grid-cols-3 gap-6 pt-4">
-                                            <div className="space-y-2">
-                                                <p className="text-xs font-bold text-muted-foreground uppercase">{t('projects.activities')}</p>
-                                                <p className="text-sm text-foreground/80 leading-relaxed font-medium line-clamp-2">{t(project.activitiesKey)}</p>
-                                            </div>
-                                            <div className="space-y-2">
-                                                <p className="text-xs font-bold text-muted-foreground uppercase">{t('projects.missions')}</p>
-                                                <p className="text-sm text-foreground/80 leading-relaxed font-medium line-clamp-2">{t(project.missionsKey)}</p>
-                                            </div>
-                                            <div className="space-y-2">
-                                                <p className="text-xs font-bold text-muted-foreground uppercase">{t('projects.responsibilities')}</p>
-                                                <p className="text-sm text-foreground/80 leading-relaxed font-medium line-clamp-2">{t(project.responsibilitiesKey)}</p>
-                                            </div>
+                                    {/* Nom + rôle + ville */}
+                                    <div className="flex-1 min-w-0">
+                                        <h3 className="text-2xl md:text-3xl font-black text-foreground">{t(project.titleKey)}</h3>
+                                        <div className="flex items-center gap-2 text-muted-foreground mt-1">
+                                            <project.icon className="w-4 h-4 flex-shrink-0" />
+                                            <span className="font-semibold text-sm truncate">{t(project.roleKey)}</span>
                                         </div>
-
-                                        <div className="flex flex-wrap gap-2 pt-2">
-                                            {project.tech.map((tech, i) => (
-                                                <span key={i} className="px-3 py-1 text-[10px] font-bold rounded-full bg-primary/5 border border-primary/10 text-primary/80 uppercase tracking-tighter">
-                                                    {tech}
-                                                </span>
-                                            ))}
+                                        <div className="flex items-center gap-2 text-muted-foreground/70 mt-1">
+                                            <MapPin className="w-4 h-4 flex-shrink-0" />
+                                            <span className="text-sm">{t(project.locationKey)}</span>
                                         </div>
+                                    </div>
 
-                                        <div className="flex items-center justify-between pt-8 border-t border-foreground/5 mt-4">
-                                            <div className="flex items-center gap-4">
-                                                <div className="p-3 rounded-2xl bg-primary/10 border border-primary/20">
-                                                    <project.icon className="w-6 h-6 text-primary" />
-                                                </div>
-                                            </div>
-
-                                            <div className="flex items-center gap-6">
-                                                <div className="flex items-center gap-2 text-muted-foreground text-sm font-bold">
-                                                    <Calendar className="w-4 h-4" />
-                                                    {t(project.durationKey)}
-                                                </div>
-                                                <motion.button
-                                                    whileHover={{ x: 5 }}
-                                                    whileTap={{ scale: 0.95 }}
-                                                    onClick={() => setSelectedProject(project)}
-                                                    className="flex items-center gap-2 text-sm font-bold text-primary group/btn"
-                                                >
-                                                    {t('projects.details')}
-                                                    <ArrowRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-1" />
-                                                </motion.button>
-                                            </div>
+                                    {/* Durée + bouton détails */}
+                                    <div className="flex flex-col items-end gap-3 flex-shrink-0">
+                                        <div className="flex items-center gap-2 text-muted-foreground text-sm font-bold">
+                                            <Calendar className="w-4 h-4" />
+                                            {t(project.durationKey)}
                                         </div>
+                                        <motion.button
+                                            whileHover={{ x: 5 }}
+                                            whileTap={{ scale: 0.95 }}
+                                            onClick={() => setSelectedProject(project)}
+                                            className="flex items-center gap-2 text-sm font-bold text-primary group/btn"
+                                        >
+                                            {t('projects.details')}
+                                            <ArrowRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-1" />
+                                        </motion.button>
                                     </div>
                                 </div>
                             </div>
@@ -187,7 +131,7 @@ export function Projects() {
                 </div>
             </div>
 
-            {/* Modal de détail de la mission */}
+            {/* Modal de détail du stage */}
             <AnimatePresence>
                 {selectedProject && (
                     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-6 overflow-hidden">
@@ -212,18 +156,20 @@ export function Projects() {
                                 <X className="w-6 h-6 text-foreground/50 group-hover/close:text-foreground" />
                             </button>
 
-                            <div className="space-y-12">
+                            <div className="space-y-10 text-center">
+                                {/* En-tête */}
                                 <div className="space-y-4">
-                                    <span className="px-4 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-bold tracking-widest uppercase">
-                                        {selectedProject.category}
-                                    </span>
                                     <h3 className="text-4xl md:text-5xl font-black text-foreground leading-tight">
-                                        {selectedProject.title}
+                                        {t(selectedProject.titleKey)}
                                     </h3>
-                                    <div className="flex flex-wrap items-center gap-6 pt-2">
+                                    <div className="flex flex-wrap items-center justify-center gap-6 pt-2">
                                         <div className="flex items-center gap-2 text-muted-foreground font-bold">
                                             <Briefcase className="w-5 h-5 text-primary" />
                                             {t(selectedProject.roleKey)}
+                                        </div>
+                                        <div className="flex items-center gap-2 text-muted-foreground font-bold">
+                                            <MapPin className="w-5 h-5 text-primary" />
+                                            {t(selectedProject.locationKey)}
                                         </div>
                                         <div className="flex items-center gap-2 text-muted-foreground font-bold">
                                             <Calendar className="w-5 h-5 text-primary" />
@@ -232,40 +178,40 @@ export function Projects() {
                                     </div>
                                 </div>
 
-                                <div className="grid gap-10">
-                                    {[
-                                        { label: 'projects.activities', key: selectedProject.activitiesKey },
-                                        { label: 'projects.missions', key: selectedProject.missionsKey },
-                                        { label: 'projects.responsibilities', key: selectedProject.responsibilitiesKey }
-                                    ].map((item, i) => (
-                                        <motion.div
-                                            key={i}
-                                            initial={{ opacity: 0, x: -20 }}
-                                            animate={{ opacity: 1, x: 0 }}
-                                            transition={{ delay: 0.1 * i + 0.3 }}
-                                            className="space-y-4"
-                                        >
-                                            <h4 className="inline-flex items-center gap-2 text-lg font-black text-foreground border-b-2 border-primary/20 pb-1">
-                                                <CheckCircle2 className="w-5 h-5 text-primary" />
-                                                {t(item.label)}
-                                            </h4>
-                                            <p className="text-lg text-muted-foreground leading-relaxed font-medium pl-7">
-                                                {t(item.key)}
-                                            </p>
-                                        </motion.div>
-                                    ))}
-                                </div>
+                                {/* Description */}
+                                <motion.div
+                                    initial={{ opacity: 0, y: 10 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ delay: 0.3 }}
+                                    className="space-y-4"
+                                >
+                                    <h4 className="text-lg font-black text-foreground">
+                                        {t('projects.description')}
+                                    </h4>
+                                    <div className="w-full h-px bg-foreground/10" />
+                                    <p className="text-base text-muted-foreground leading-relaxed font-normal text-justify">
+                                        {t(selectedProject.descriptionKey)}
+                                    </p>
+                                </motion.div>
 
-                                <div className="pt-8 border-t border-foreground/5">
-                                    <p className="text-xs font-bold text-muted-foreground uppercase tracking-widest mb-4">Expertise mobilisée</p>
-                                    <div className="flex flex-wrap gap-2">
-                                        {selectedProject.tech.map((tech, i) => (
-                                            <span key={i} className="px-4 py-2 rounded-xl bg-foreground/5 border border-foreground/10 text-foreground font-bold text-sm">
-                                                {tech}
+                                {/* Expertise mobilisée — barre de fin */}
+                                <motion.div
+                                    initial={{ opacity: 0, y: 10 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ delay: 0.5 }}
+                                    className="pt-6 mt-2 border-t border-foreground/10"
+                                >
+                                    <div className="flex items-center justify-center gap-3 flex-wrap">
+                                        {t(selectedProject.competencesKey).split(',').map((skill, i) => (
+                                            <span
+                                                key={i}
+                                                className="px-2.5 py-1 rounded-full bg-primary/10 text-primary text-[11px] font-normal border border-primary/20"
+                                            >
+                                                {skill.trim()}
                                             </span>
                                         ))}
                                     </div>
-                                </div>
+                                </motion.div>
                             </div>
                         </motion.div>
                     </div>
