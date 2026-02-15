@@ -5,7 +5,7 @@
  */
 import { motion, AnimatePresence, useInView } from 'framer-motion';
 import { useRef, useState, type FormEvent } from 'react';
-import { Mail, Github, Linkedin, Send, MessageSquare, Phone, Facebook, Instagram, Copy, Check, X, ExternalLink } from 'lucide-react';
+import { Mail, Linkedin, Send, MessageSquare, Phone, Facebook, Instagram, Copy, Check, X, ExternalLink } from 'lucide-react';
 import { useLanguage } from '../provider/LanguageContext';
 
 // Icône WhatsApp (SVG officiel)

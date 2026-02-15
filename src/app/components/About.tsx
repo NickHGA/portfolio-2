@@ -5,7 +5,7 @@
  */
 import { useState, useRef } from 'react';
 import { motion, AnimatePresence, useInView } from 'framer-motion';
-import { GraduationCap, Target, Calendar, MapPin, School, X, Award, Brain } from 'lucide-react';
+import { GraduationCap, Target, Calendar, MapPin, School, X, Award } from 'lucide-react';
 import { useLanguage } from '../provider/LanguageContext';
 import aboutPhoto from '../../assets/Photo (3).png';
 

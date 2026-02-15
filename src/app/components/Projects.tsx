@@ -6,9 +6,7 @@ import {
     Calendar,
     Briefcase,
     X,
-    ArrowRight,
-    CheckCircle2,
-    Wrench
+    ArrowRight
 } from 'lucide-react';
 import { useLanguage } from '../provider/LanguageContext';
 

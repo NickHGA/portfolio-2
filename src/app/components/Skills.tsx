@@ -1,6 +1,6 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { Calculator, Landmark, Scale, Laptop, PieChart, Users, FileText, TrendingUp, GitMerge } from 'lucide-react';
+import { Calculator, Landmark, Scale, Users, FileText, TrendingUp, GitMerge } from 'lucide-react';
 import { useLanguage } from '../provider/LanguageContext';
 
 import logoWord from '../../assets/logo Word.png';
